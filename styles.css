@@ -1,0 +1,550 @@
+/* ===== ESTILOS GENERALES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(45deg, #1e3c72, #2a5298, #6a5acd);
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===== HEADER ===== */
+.header {
+    text-align: center;
+    padding: 30px 0;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+    font-size: 3.5rem;
+    color: #ffd700;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.3rem;
+    color: #87ceeb;
+}
+
+/* ===== SECCIONES DE LECCIÓN ===== */
+.lesson-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.lesson-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+    pointer-events: none;
+}
+
+.lesson-title {
+    font-size: 2.5rem;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== CAJAS DE HISTORIA ===== */
+.story-box {
+    background: rgba(139, 69, 19, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border-left: 5px solid #ffd700;
+}
+
+/* ===== CONTENEDORES DE CÓDIGO ===== */
+.code-container {
+    background: #2c3e50;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+    border: 2px solid #34495e;
+    position: relative;
+    overflow-x: auto;
+}
+
+.code-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3498db, #2ecc71, #f1c40f, #e74c3c);
+    background-size: 200% 100%;
+    animation: gradientMove 3s linear infinite;
+    border-radius: 10px 10px 0 0;
+}
+
+.code-title {
+    color: #ffd700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.code {
+    color: #ecf0f1;
+    line-height: 1.8;
+    font-size: 1rem;
+    position: relative;
+    white-space: pre;
+}
+
+/* ===== INDENTACIÓN VISUAL ===== */
+.indent-1 {
+    padding-left: 2em;
+    position: relative;
+}
+
+.indent-1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(255, 215, 0, 0.3);
+    border-radius: 1px;
+}
+
+/* ===== SINTAXIS DE CÓDIGO ===== */
+.keyword {
+    color: #3498db;
+    font-weight: bold;
+}
+
+.string {
+    color: #2ecc71;
+}
+
+.comment {
+    color: #95a5a6;
+    font-style: italic;
+}
+
+.number {
+    color: #e67e22;
+}
+
+/* ===== SECCIONES INTERACTIVAS ===== */
+.interactive-section {
+    background: rgba(46, 204, 113, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 25px 0;
+    border: 2px solid #2ecc71;
+    transition: transform 0.3s ease;
+}
+
+.interactive-section:hover {
+    transform: translateY(-2px);
+}
+
+/* ===== BOTONES ===== */
+.btn {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+    margin: 10px;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.6);
+}
+
+/* ===== SALIDA DE CÓDIGO ===== */
+.output {
+    background: #34495e;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    font-family: 'Courier New', monospace;
+    color: #2ecc71;
+    border: 2px solid #2ecc71;
+    min-height: 100px;
+    white-space: pre-wrap;
+}
+
+/* ===== ANIMACIONES ===== */
+.pirate-emoji {
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px); 
+    }
+    50% { 
+        transform: translateY(-10px); 
+    }
+}
+
+@keyframes gradientMove {
+    0% { 
+        background-position: 200% 0; 
+    }
+    100% { 
+        background-position: -200% 0; 
+    }
+}
+
+@keyframes rotate {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(360deg); 
+    }
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes celebration {
+    0% {
+        transform: translate(-50%, -50%) scale(0) rotate(180deg);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== CAJAS ESPECIALES ===== */
+.treasure-box {
+    background: linear-gradient(45deg, #f1c40f, #f39c12);
+    color: #2c3e50;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    border: 3px solid #e67e22;
+    box-shadow: 0 5px 20px rgba(241, 196, 15, 0.4);
+}
+
+.challenge-box {
+    background: rgba(155, 89, 182, 0.2);
+    border: 2px solid #9b59b6;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 25px 0;
+}
+
+/* ===== SISTEMA DE PESTAÑAS ===== */
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.tab {
+    flex: 1;
+    padding: 15px;
+    background: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.tab.active {
+    background: #ffd700;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ===== TABLA DE COMPARACIÓN ===== */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.comparison-table th {
+    background: rgba(255, 215, 0, 0.3);
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* ===== ONDA DE FONDO ===== */
+.wave {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48V0h1200v120z" fill="%23ffffff" fill-opacity="0.1"/></svg>');
+    z-index: -1;
+    animation: wave 3s linear infinite;
+}
+
+/* ===== EDITOR DE CÓDIGO ===== */
+.code-editor {
+    background: #2c3e50;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 2px solid #34495e;
+    overflow: hidden;
+}
+
+.editor-header {
+    background: #34495e;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editor-title {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.editor-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.editor-btn {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.editor-btn:hover {
+    background: #2ecc71;
+    transform: translateY(-2px);
+}
+
+.editor-btn.clear {
+    background: #e74c3c;
+}
+
+.editor-btn.clear:hover {
+    background: #c0392b;
+}
+
+.code-textarea {
+    width: 100%;
+    height: 200px;
+    background: #2c3e50;
+    color: #ecf0f1;
+    border: none;
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    outline: none;
+}
+
+.code-textarea:focus {
+    background: #34495e;
+}
+
+.editor-output {
+    background: #1a252f;
+    color: #2ecc71;
+    padding: 15px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    border-top: 1px solid #34495e;
+    min-height: 60px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.error {
+    color: #e74c3c !important;
+}
+
+.success {
+    color: #2ecc71 !important;
+}
+
+/* ===== BOTÓN DE AYUDA ===== */
+.help-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.help-btn:hover {
+    background: #2980b9;
+}
+
+.hint-box {
+    background: rgba(52, 152, 219, 0.2);
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    display: none;
+}
+
+.hint-box.show {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+/* ===== CALLOUT PARA INDENTACIÓN ===== */
+.indent-callout {
+    background: rgba(255, 193, 7, 0.2);
+    border: 2px solid #ffc107;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.indent-callout h4 {
+    color: #ffc107;
+    margin-bottom: 10px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .lesson-title {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    .lesson-section {
+        padding: 20px;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab {
+        margin-bottom: 5px;
+    }
+    
+    .comparison-table {
+        font-size: 0.9rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px;
+    }
+}
