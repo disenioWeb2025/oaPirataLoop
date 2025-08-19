@@ -1,502 +1,349 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aventuras Piratas: Bucles FOR y WHILE</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.11.1/skulpt.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.11.1/skulpt-stdlib.js"></script--  >
-    <!-- Importar PyScript -->
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aventuras Piratas: Bucles FOR y WHILE</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
 
-<body>
-    <div class="wave"></div>
-    <div class="container">
-        <div class="header">
-            <h1>🏴‍☠️ Aventuras Piratas 🏴‍☠️</h1>
-            <p>Aprende bucles FOR y WHILE con el Capitán CodeBeard</p>
-            <div class="pirate-emoji">⚔️🦜💰</div>
-        </div>
-
-        <!-- Introducción -->
-        <div class="lesson-section">
-            <h2 class="lesson-title">🏴‍☠️ Bienvenido a Bordo, Marinero 🏴‍☠️</h2>
-            <div class="story-box">
-                <p>
-                    <strong>¡Ahoy!</strong> Soy el Capitán CodeBeard y necesito tu ayuda
-                    para encontrar tesoros perdidos. Para ser un buen pirata, necesitas
-                    aprender a usar los <strong>bucles</strong> - son como las rutas que
-                    seguimos para buscar tesoros una y otra vez hasta encontrarlos.
-                </p>
-                <p>
-                    En Python, tenemos dos tipos principales de bucles:
-                    <code>for</code> y <code>while</code>. ¡Vamos a explorar cada uno
-                    con emocionantes aventuras piratas!
-                </p>
-            </div>
-        </div>
-
-        <!-- Tabs para FOR y WHILE -->
-        <div class="lesson-section">
-            <div class="tabs">
-                <button class="tab active" onclick="showTab('for-tab')">
-                    🗺️ Bucles FOR
-                </button>
-                <button class="tab" onclick="showTab('while-tab')">
-                    ⚔ Bucles WHILE
-                </button>
-                <button class="tab" onclick="showTab('comparison-tab')">
-                    ⚖️ Comparación
-                </button>
-                <button class="tab" onclick="showTab('challenges-tab')">
-                    🏆 Desafíos
-                </button>
+    <body>
+        <div class="wave"></div>
+        <div class="container">
+            <div class="header">
+                <h1>🏴‍☠️ Aventuras Piratas 🏴‍☠️</h1>
+                <p>Aprende bucles FOR y WHILE con el Capitán CodeBeard</p>
+                <div class="pirate-emoji">⚔️🦜💰</div>
             </div>
 
-            <!-- Contenido FOR -->
-            <div id="for-tab" class="tab-content active">
-
-                <h2 class="lesson-title">
-                    🗺️ Bucle FOR: Siguiendo el Mapa del Tesoro
-                </h2>
-
+            <!-- Introducción -->
+            <div class="lesson-section">
+                <h2 class="lesson-title">🏴‍☠️ Bienvenido a Bordo, Marinero 🏴‍☠️</h2>
                 <div class="story-box">
                     <p>
-                        <strong>Historia:</strong> El Capitán CodeBeard tiene un mapa con
-                        5 islas marcadas. Necesita visitar CADA isla exactamente una vez
-                        para buscar tesoros. ¡El bucle FOR es perfecto para esto porque
-                        sabemos exactamente cuántas islas hay!
+                        <strong>¡Ahoy!</strong> Soy el Capitán CodeBeard y necesito tu ayuda
+                        para encontrar tesoros perdidos. Para ser un buen pirata, necesitas
+                        aprender a usar los <strong>bucles</strong> - son como las rutas que
+                        seguimos para buscar tesoros una y otra vez hasta encontrarlos.
                     </p>
-                </div>
-
-                <div class="interactive-section">
-                    <h3>🎮 ¡Prueba el código!</h3>
-
-                    <div class="output" id="for-output">
-                        <p>Presiona el botón Run para comenzar la aventura...</p>
-                        <p>Luego crea una lista de tesoros y recorrela en forma similar.</p>
-                    </div>
-
-                    <div class="code-container">
-                        <div class="code-title">
-                            🏝️ Visitando las 5 Islas del Tesoro
-                        </div>
-                        <iframe src="https://trinket.io/embed/python3/c5fa7e2261ce" width="100%" height="350"
-                            frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-
-                <div class="interactive-section">
-                    <h3>🎮 ¡Continua probando código!</h3>
-
-                    <div class="output" id="for-output">
-                        <p>Luego de ejecutar, hace cambios ...</p>
-                        <p>¿qué pasa si cambias los números de range?</p>
-                    </div>
-
-                    <div class="code-container">
-                        <div class="code-title">
-                            🔢 Contando Monedas de Oro (FOR con números)
-                        </div>
-                        <iframe src="https://trinket.io/embed/python3/7b273451c092" width="100%" height="350"
-                            frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-
-                <div class="interactive-section">
-                    <h3>🎮 ¡Continua con más pruebas!</h3>
-
-                    <div class="output" id="for-output">
-                        <p>Experimenta con range ...</p>
-                        <p>Prueba diferentes números</p>
-                    </div>
-
-                    <div class="code-container">
-                        <div class="code-title">
-                            🔢 ¡Practica con números!
-                        </div>
-                        <iframe src="https://trinket.io/embed/python3/1c13e72c3991" width="100%" height="350"
-                            frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Contenido WHILE -->
-            <div id="while-tab" class="tab-content">
-                <h2 class="lesson-title">⚔ Bucle WHILE: Cazando al Kraken</h2>
-
-                <div class="story-box">
                     <p>
-                        <strong>Historia:</strong> ¡Un terrible Kraken está atacando
-                        nuestro barco! No sabemos cuántos cañonazos necesitaremos para
-                        derrotarlo, pero debemos seguir disparando MIENTRAS tenga vida.
-                        ¡El bucle WHILE es perfecto para esto!
+                        En Python, tenemos dos tipos principales de bucles:
+                        <code>for</code> y <code>while</code>. ¡Vamos a explorar cada uno
+                        con emocionantes aventuras piratas!
                     </p>
                 </div>
-
-                <div class="interactive-section">
-                    <div class="interactive-section">
-                        <h3>⚔️ ¡A la batalla!</h3>
-                        <button class="btn" onclick="runWhileExample()">
-                            🦑 Luchar contra el Kraken
-                        </button>
-                        <div class="output" id="while-output">
-                            <p>¿Estás listo para la batalla?</p>
-                        </div>
-                    </div>
-
-                    <div class="code-container">
-                        <div class="code-title">
-                            🔢 Batalla contra el Kraken
-                        </div>
-                        <iframe src="https://trinket.io/embed/python3/c1da72dd6d57" width="100%" height="450"
-                            frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-
-                <div class="interactive-section">
-                    <div class="interactive-section">
-                        <h3>⚔️ ¡A buscar tesoros!</h3>
-                        <button class="btn" onclick="runWhileTreasure()">
-                            💎 Buscar Tesoro
-                        </button>
-                        <div class="output" id="while-treasure-output">
-                            <p> ¡La búsqueda del tesoro está por comenzar!</p>
-                        </div>
-                    </div>
-
-                    <div class="code-container">
-                        <div class="code-title">
-                            🔢🎯 Buscando Tesoros Escondidos
-                        </div>
-                        <iframe src="https://trinket.io/embed/python3/bdb62cc322c9" width="100%" height="450"
-                            frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-
-                <div class="interactive-section">
-                    <div class="interactive-section">
-                        <h3>⚔ ¡Practica bucles WHILE!</h3>
-                        <button class="btn" onclick="runWhileTreasure()">
-                            💎 Mientras ....
-                        </button>
-                        <div class="output" id="while-treasure-output">
-                            <p> 👆 ¡Cuidado con los bucles infinitos! Siempre cambia la condición</p>
-                        </div>
-                    </div>
-
-                    <div class="code-container">
-                        <div class="code-title">
-                            🔢🎯 Estos bucles nos ayudan
-                        </div>
-                        <iframe src="https://trinket.io/embed/python3/4c5132e02ab1" width="100%" height="450"
-                            frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- Comparación -->
-            <div id="comparison-tab" class="tab-content">
-                <h2 class="lesson-title">⚖️ FOR vs WHILE: ¿Cuándo usar cada uno?</h2>
+            <!-- Tabs para FOR y WHILE -->
+            <div class="lesson-section">
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('for-tab', this)">
+                        🗺️ Bucles FOR
+                    </button>
+                    <button class="tab" onclick="showTab('while-tab', this)">
+                        ⚔ Bucles WHILE
+                    </button>
+                    <button class="tab" onclick="showTab('comparison-tab', this)">
+                        ⚖️ Comparación
+                    </button>
+                    <button class="tab" onclick="showTab('challenges-tab', this)">
+                        🏆 Desafíos
+                    </button>
+                </div>
 
-                <table class="comparison-table">
-                    <tr>
-                        <th>Aspecto</th>
-                        <th>🗺️ Bucle FOR</th>
-                        <th>⚔ Bucle WHILE</th>
-                    </tr>
-                    <tr>
-                        <td><strong>¿Cuándo usar?</strong></td>
-                        <td>Cuando SABES cuántas veces repetir</td>
-                        <td>Cuando NO SABES cuántas veces repetir</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ejemplo Pirata</strong></td>
-                        <td>Visitar 5 islas del mapa</td>
-                        <td>Luchar hasta derrotar al Kraken</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Sintaxis</strong></td>
-                        <td>for item in lista:</td>
-                        <td>while condicion:</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Control</strong></td>
-                        <td>Automático</td>
-                        <td>Manual (debes cambiar la condición)</td>
-                    </tr>
-                </table>
+                <!-- Contenido FOR -->
+                <div id="for-tab" class="tab-content active">
 
+                    <h2 class="lesson-title">
+                        🗺️ Bucle FOR: Siguiendo el Mapa del Tesoro
+                    </h2>
+
+                    <div class="story-box">
+                        <p>
+                            <strong>Historia:</strong> El Capitán CodeBeard tiene un mapa con
+                            5 islas marcadas. Necesita visitar CADA isla exactamente una vez
+                            para buscar tesoros. ¡El bucle FOR es perfecto para esto porque
+                            sabemos exactamente cuántas islas hay!
+                        </p>
+                    </div>
+
+                    <div class="interactive-section">
+                        <h3>🎮 ¡Prueba el código!</h3>
+
+                        <div class="output" id="for-output">
+                            <p>Presiona el botón Run para comenzar la aventura...</p>
+                            <p>Luego crea una lista de tesoros y recorrela en forma similar.</p>
+                        </div>
+
+                        <div class="code-container">
+                            <div class="code-title">
+                                🏝️ Visitando las 5 Islas del Tesoro
+                            </div>
+                            <iframe src="https://trinket.io/embed/python3/c5fa7e2261ce" width="100%" height="350"
+                                frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="interactive-section">
+                        <h3>🎮 ¡Continua probando código!</h3>
+
+                        <div class="output" id="for-output">
+                            <p>Luego de ejecutar, hace cambios ...</p>
+                            <p>¿qué pasa si cambias los números de range?</p>
+                        </div>
+
+                        <div class="code-container">
+                            <div class="code-title">
+                                🔢 Contando Monedas de Oro (FOR con números)
+                            </div>
+                            <iframe src="https://trinket.io/embed/python3/7b273451c092" width="100%" height="350"
+                                frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="interactive-section">
+                        <h3>🎮 ¡Continua con más pruebas!</h3>
+
+                        <div class="output" id="for-output">
+                            <p>Experimenta con range ...</p>
+                            <p>Prueba diferentes números</p>
+                        </div>
+
+                        <div class="code-container">
+                            <div class="code-title">
+                                🔢 ¡Practica con números!
+                            </div>
+                            <iframe src="https://trinket.io/embed/python3/1c13e72c3991" width="100%" height="350"
+                                frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Contenido WHILE -->
+                <div id="while-tab" class="tab-content">
+                    <h2 class="lesson-title">⚔ Bucle WHILE: Cazando al Kraken</h2>
+
+                    <div class="story-box">
+                        <p>
+                            <strong>Historia:</strong> ¡Un terrible Kraken está atacando
+                            nuestro barco! No sabemos cuántos cañonazos necesitaremos para
+                            derrotarlo, pero debemos seguir disparando MIENTRAS tenga vida.
+                            ¡El bucle WHILE es perfecto para esto!
+                        </p>
+                    </div>
+
+                    <div class="interactive-section">
+                        <div class="interactive-section">
+                            <h3>⚔️ ¡A la batalla!</h3>
+                            <button class="btn" onclick="runWhileExample()">
+                                🦑 Luchar contra el Kraken
+                            </button>
+                            <div class="output" id="while-output">
+                                <p>¿Estás listo para la batalla?</p>
+                            </div>
+                        </div>
+
+                        <div class="code-container">
+                            <div class="code-title">
+                                🔢 Batalla contra el Kraken
+                            </div>
+                            <iframe src="https://trinket.io/embed/python3/c1da72dd6d57" width="100%" height="450"
+                                frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="interactive-section">
+                        <div class="interactive-section">
+                            <h3>⚔️ ¡A buscar tesoros!</h3>
+                            <button class="btn" onclick="runWhileTreasure()">
+                                💎 Buscar Tesoro
+                            </button>
+                            <div class="output" id="while-treasure-output">
+                                <p> ¡La búsqueda del tesoro está por comenzar!</p>
+                            </div>
+                        </div>
+
+                        <div class="code-container">
+                            <div class="code-title">
+                                🔢🎯 Buscando Tesoros Escondidos
+                            </div>
+                            <iframe src="https://trinket.io/embed/python3/bdb62cc322c9" width="100%" height="450"
+                                frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="interactive-section">
+                        <div class="interactive-section">
+                            <h3>⚔ ¡Practica bucles WHILE!</h3>
+                            <button class="btn" onclick="runWhileTreasure()">
+                                💎 Mientras ....
+                            </button>
+                            <div class="output" id="while-treasure-output">
+                                <p> 👆 ¡Cuidado con los bucles infinitos! Siempre cambia la condición</p>
+                            </div>
+                        </div>
+
+                        <div class="code-container">
+                            <div class="code-title">
+                                🔢🎯 Estos bucles nos ayudan
+                            </div>
+                            <iframe src="https://trinket.io/embed/python3/4c5132e02ab1" width="100%" height="450"
+                                frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Comparación -->
+                <div id="comparison-tab" class="tab-content">
+                    <h2 class="lesson-title">⚖️ FOR vs WHILE: ¿Cuándo usar cada uno?</h2>
+
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Aspecto</th>
+                            <th>🗺️ Bucle FOR</th>
+                            <th>⚔ Bucle WHILE</th>
+                        </tr>
+                        <tr>
+                            <td><strong>¿Cuándo usar?</strong></td>
+                            <td>Cuando SABES cuántas veces repetir</td>
+                            <td>Cuando NO SABES cuántas veces repetir</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ejemplo Pirata</strong></td>
+                            <td>Visitar 5 islas del mapa</td>
+                            <td>Luchar hasta derrotar al Kraken</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sintaxis</strong></td>
+                            <td>for item in lista:</td>
+                            <td>while condicion:</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Control</strong></td>
+                            <td>Automático</td>
+                            <td>Manual (debes cambiar la condición)</td>
+                        </tr>
+                    </table>
+
+                    <div class="treasure-box">
+                        <h3>💡 Consejo del Capitán CodeBeard:</h3>
+                        <p>
+                            <strong>FOR:</strong> "Usa FOR cuando tengas una lista de cosas
+                            que hacer o un número fijo de repeticiones."
+                        </p>
+                        <p>
+                            <strong>WHILE:</strong> "Usa WHILE cuando necesites repetir algo
+                            hasta que se cumpla una condición especial."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Desafíos -->
+                <div id="challenges-tab" class="tab-content">
+                    <h2 class="lesson-title">🏆 Desafíos del Capitán</h2>
+
+                    <div class="challenge-box">
+                        <div class="interactive-section">
+                            <div class="interactive-section">
+                                <h3>⚔ ¡Practica bucles FOR!</h3>
+                                <button class="btn" onclick="runWhileTreasure()">
+                                    ⚔️ Desafío 1: La Tripulación
+                                </button>
+                                <div class="output" id="while-treasure-output">
+                                    <p> 👆 Ayuda al capitán a saludar a cada miembro de su tripulación usando un bucle FOR:</p>
+                                </div>
+                            </div>
+
+                            <div class="code-container">
+                                <div class="code-title">
+                                    ⚔️ Completa el código
+                                </div>
+                                <iframe src="https://trinket.io/embed/python3/bb2d1971860b" width="100%" height="450"
+                                    frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="challenge-box">
+                        <div class="interactive-section">
+                            <div class="interactive-section">
+                                <h3>⚔ ¡Practica bucles WHILE!</h3>
+                                <button class="btn" onclick="runWhileTreasure()">
+                                    🦜 Desafío 2: El Loro Contador
+                                </button>
+                                <div class="output" id="while-treasure-output">
+                                    <p> 👆 El loro del capitán solo sabe contar hasta que le digamos "¡ALTO!". Usa un bucle WHILE:</p>
+                                </div>
+                            </div>
+
+                            <div class="code-container">
+                                <div class="code-title">
+                                    🦜 Ayuda al loro a contar
+                                </div>
+                                <iframe src="https://trinket.io/embed/python3/c3fe62330380" width="100%" height="450"
+                                    frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="challenge-box">
+                        <div class="interactive-section">
+                            <div class="interactive-section">
+                                <h3>⚔ ¡Practica bucles WHILE!</h3>
+                                <button class="btn" onclick="runWhileTreasure()">
+                                    🎲 Desafío 3: Juego de Dados
+                                </button>
+                                <div class="output" id="while-treasure-output">
+                                    <p> 👆 Crea un juego donde lanzas dados hasta sacar un 6 (¡el número de la suerte!):</p>
+                                </div>
+                            </div>
+
+                            <div class="code-container">
+                                <div class="code-title">
+                                    🎲 Programa tu propio juego
+                                </div>
+                                <iframe src="https://trinket.io/embed/python3/c9d9e058e483" width="100%" height="450"
+                                    frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen Final -->
+            <div id="final-felicidades" class="lesson-section" style="display: none;">
+                <h2 class="lesson-title">¡Felicidades, Marinero!</h2> 🎓
                 <div class="treasure-box">
-                    <h3>💡 Consejo del Capitán CodeBeard:</h3>
-                    <p>
-                        <strong>FOR:</strong> "Usa FOR cuando tengas una lista de cosas
-                        que hacer o un número fijo de repeticiones."
-                    </p>
-                    <p>
-                        <strong>WHILE:</strong> "Usa WHILE cuando necesites repetir algo
-                        hasta que se cumpla una condición especial."
-                    </p>
+                    <h3>Has completado tu entrenamiento pirata y ahora sabes:</h3> 🏆
+                    <p>Usar bucles <strong>FOR</strong> para recorrer listas e iterar un número específico de veces ✅</p>
+                    <p>Usar bucles <strong>WHILE</strong> para repetir acciones mientras se cumpla una condición ✅</p>
+                    <p>Elegir el bucle correcto para cada situación ✅</p>
+                    <p>Resolver problemas paso a paso como un verdadero programador pirata ✅</p>
+                    <br />
+                    <p><strong>¡Ahora eres oficialmente parte de la tripulación del Capitán CodeBeard! 🏴‍☠️</strong></p>
                 </div>
             </div>
-
-
-
-
-            <!-- Desafíos -->
-            <div id="challenges-tab" class="tab-content">
-                <h2 class="lesson-title">🏆 Desafíos del Capitán</h2>
-
-                <div class="challenge-box">
-                    <div class="interactive-section">
-                        <div class="interactive-section">
-                            <h3>⚔ ¡Practica bucles FOR!</h3>
-                            <button class="btn" onclick="runWhileTreasure()">
-                                ⚔️ Desafío 1: La Tripulación
-                            </button>
-                            <div class="output" id="while-treasure-output">
-                                <p> 👆 Ayuda al capitán a saludar a cada miembro de su tripulación usando un bucle FOR:</p>
-                            </div>
-                        </div>
-
-                        <div class="code-container">
-                            <div class="code-title">
-                                ⚔️ Completa el código
-                            </div>
-                            <iframe src="https://trinket.io/embed/python3/bb2d1971860b" width="100%" height="450"
-                                frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="challenge-box">
-                    <div class="interactive-section">
-                        <div class="interactive-section">
-                            <h3>⚔ ¡Practica bucles WHILE!</h3>
-                            <button class="btn" onclick="runWhileTreasure()">
-                                🦜 Desafío 2: El Loro Contador
-                            </button>
-                            <div class="output" id="while-treasure-output">
-                                <p> 👆 El loro del capitán solo sabe contar hasta que le digamos "¡ALTO!". Usa un bucle WHILE:</p>
-                            </div>
-                        </div>
-
-                        <div class="code-container">
-                            <div class="code-title">
-                                🦜 Ayuda al loro a contar
-                            </div>
-                            <iframe src="https://trinket.io/embed/python3/c3fe62330380" width="100%" height="450"
-                                frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="challenge-box">
-                    <div class="interactive-section">
-                        <div class="interactive-section">
-                            <h3>⚔ ¡Practica bucles WHILE!</h3>
-                            <button class="btn" onclick="runWhileTreasure()">
-                                🎲 Desafío 3: Juego de Dados
-                            </button>
-                            <div class="output" id="while-treasure-output">
-                                <p> 👆 Crea un juego donde lanzas dados hasta sacar un 6 (¡el número de la suerte!):</p>
-                            </div>
-                        </div>
-
-                        <div class="code-container">
-                            <div class="code-title">
-                                🎲 Programa tu propio juego
-                            </div>
-                            <iframe src="https://trinket.io/embed/python3/c9d9e058e483" width="100%" height="450"
-                                frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-                    <!--h3>⚔️ Desafío 1: La Tripulación</h3>
-                    <p>
-                        Ayuda al capitán a saludar a cada miembro de su tripulación usando
-                        un bucle FOR:
-                    </p>
-
-                    <div class="code-editor">
-                        <div class="editor-header">
-                            <div class="editor-title">🏴‍☠️ Completa el código</div>
-                            <div class="editor-buttons">
-                                <button class="help-btn" onclick="toggleHint('hint-challenge-1')">
-                                    💡 Ayuda
-                                </button>
-                                <button class="editor-btn" onclick="runPythonCode('challenge1', 'challenge1-output')">
-                                    ▶️ Ejecutar
-                                </button>
-                                <button class="editor-btn clear"
-                                    onclick="clearEditor('challenge1', 'challenge1-output')">
-                                    🗑️ Limpiar
-                                </button>
-                                <button class="editor-btn" onclick="showSolution('challenge1', solution1)">
-                                    ✨ Solución
-                                </button>
-                            </div>
-                        </div>
-                        <textarea class="code-textarea" id="challenge1"></textarea>
-                        <div class="editor-output" id="challenge1-output">
-                            ¡Completa el código y presiona "Ejecutar"!
-                        </div>
-                        <div class="hint-box" id="hint-challenge-1">
-                            <strong>💡 Pistas:</strong><br />
-                            • Necesitas una variable para cada elemento de la lista<br />
-                            • La lista se llama 'tripulacion'<br />
-                            • Usa la variable que creaste en el print()
-                        </div>
-                    </div>
-                </div-->
-
-                <!--div class="challenge-box">
-                    <h3>🦜 Desafío 2: El Loro Contador</h3>
-                    <p>
-                        El loro del capitán solo sabe contar hasta que le digamos
-                        "¡ALTO!". Usa un bucle WHILE:
-                    </p>
-
-                    <div class="code-editor">
-                        <div class="editor-header">
-                            <div class="editor-title">🦜 Ayuda al loro a contar</div>
-                            <div class="editor-buttons">
-                                <button class="help-btn" onclick="toggleHint('hint-challenge-2')">
-                                    💡 Ayuda
-                                </button>
-                                <button class="editor-btn" onclick="runPythonCode('challenge2', 'challenge2-output')">
-                                    ▶️ Ejecutar
-                                </button>
-                                <button class="editor-btn clear"
-                                    onclick="clearEditor('challenge2', 'challenge2-output')">
-                                    🗑️ Limpiar
-                                </button>
-                                <button class="editor-btn" onclick="showSolution('challenge2', solution2)">
-                                    ✨ Solución
-                                </button>
-                            </div>
-                        </div>
-                        <textarea class="code-textarea" id="challenge2"></textarea>
-                        <div class="editor-output" id="challenge2-output">
-                            ¡Ayuda al loro a contar!
-                        </div>
-                        <div class="hint-box" id="hint-challenge-2">
-                            <strong>🦜 Pistas:</strong><br />
-                            • La condición debe usar la variable 'numero'<br />
-                            • Compara con el número hasta donde quieres contar<br />
-                            • ¡No olvides incrementar 'numero' dentro del bucle!
-                        </div>
-                    </div>
-                </div-->
-
-                <!--div class="challenge-box">
-                    <h3>🎲 Desafío 3: Juego de Dados</h3>
-                    <p>
-                        Crea un juego donde lanzas dados hasta sacar un 6 (¡el número de
-                        la suerte!):
-                    </p>
-
-                    <div class="code-editor">
-                        <div class="editor-header">
-                            <div class="editor-title">🎲 Programa tu propio juego</div>
-                            <div class="editor-buttons">
-                                <button class="help-btn" onclick="toggleHint('hint-challenge-3')">
-                                    💡 Ayuda
-                                </button>
-                                <button class="editor-btn" onclick="runPythonCode('challenge3', 'challenge3-output')">
-                                    ▶️ Ejecutar
-                                </button>
-                                <button class="editor-btn clear"
-                                    onclick="clearEditor('challenge3', 'challenge3-output')">
-                                    🗑️ Limpiar
-                                </button>
-                                <button class="editor-btn" onclick="showSolution('challenge3', solution3)">
-                                    ✨ Solución
-                                </button>
-                            </div>
-                        </div>
-                        <textarea class="code-textarea" id="challenge3"></textarea>
-                        <div class="editor-output" id="challenge3-output">
-                            ¡Crea tu propio juego de dados!
-                        </div>
-                        <div class="hint-box" id="hint-challenge-3">
-                            <strong>🎲 Pistas:</strong><br />
-                            • Usa <code>while resultado != 6:</code><br />
-                            • <code>random.randint(1, 6)</code> simula un dado<br />
-                            • Cuenta los lanzamientos con una variable<br />
-                            • ¡Muestra cada resultado!
-                        </div>
-                    </div>
-                </div-->
-            </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
         </div>
 
-        <!-- Resumen Final -->
-        <div class="lesson-section">
-            <h2 class="lesson-title">🎓 ¡Felicidades, Marinero!</h2>
-            <div class="treasure-box">
-                <h3>🏆 Has completado tu entrenamiento pirata y ahora sabes:</h3>
-                <p>
-                    ✅ Usar bucles <strong>FOR</strong> para recorrer listas e iterar un
-                    número específico de veces
-                </p>
-                <p>
-                    ✅ Usar bucles <strong>WHILE</strong> para repetir acciones mientras
-                    se cumpla una condición
-                </p>
-                <p>✅ Elegir el bucle correcto para cada situación</p>
-                <p>
-                    ✅ Resolver problemas paso a paso como un verdadero programador
-                    pirata
-                </p>
-                <br />
-                <p>
-                    <strong>🏴‍☠️ ¡Ahora eres oficialmente parte de la tripulación del Capitán
-                        CodeBeard!</strong>
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-    <footer>
-        <p>
-            Creado por: Elizabeth Izquierdo - Néstor Larroca · Licencia
-            <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>
-        </p>
-    </footer>
-</body>
+        <script src="script.js"></script>
+        <footer>
+            <p>
+                Creado por: Elizabeth Izquierdo - Néstor Larroca · Licencia
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>
+            </p>
+        </footer>
+    </body>
 
 </html>
