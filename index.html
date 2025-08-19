@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aventuras Piratas: Bucles FOR y WHILE</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.11.1/skulpt.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.11.1/skulpt-stdlib.js"></script>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.11.1/skulpt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.11.1/skulpt-stdlib.js"></script--  >
+    <!-- Importar PyScript -->
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 
 <body>
@@ -249,12 +252,90 @@
                 </div>
             </div>
 
+
+
+
             <!-- Desafíos -->
             <div id="challenges-tab" class="tab-content">
                 <h2 class="lesson-title">🏆 Desafíos del Capitán</h2>
 
                 <div class="challenge-box">
-                    <h3>⚔️ Desafío 1: La Tripulación</h3>
+                    <div class="interactive-section">
+                        <div class="interactive-section">
+                            <h3>⚔ ¡Practica bucles FOR!</h3>
+                            <button class="btn" onclick="runWhileTreasure()">
+                                ⚔️ Desafío 1: La Tripulación
+                            </button>
+                            <div class="output" id="while-treasure-output">
+                                <p> 👆 Ayuda al capitán a saludar a cada miembro de su tripulación usando un bucle FOR:</p>
+                            </div>
+                        </div>
+
+                        <div class="code-container">
+                            <div class="code-title">
+                                ⚔️ Completa el código
+                            </div>
+                            <iframe src="https://trinket.io/embed/python3/bb2d1971860b" width="100%" height="450"
+                                frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge-box">
+                    <div class="interactive-section">
+                        <div class="interactive-section">
+                            <h3>⚔ ¡Practica bucles WHILE!</h3>
+                            <button class="btn" onclick="runWhileTreasure()">
+                                🦜 Desafío 2: El Loro Contador
+                            </button>
+                            <div class="output" id="while-treasure-output">
+                                <p> 👆 El loro del capitán solo sabe contar hasta que le digamos "¡ALTO!". Usa un bucle WHILE:</p>
+                            </div>
+                        </div>
+
+                        <div class="code-container">
+                            <div class="code-title">
+                                🦜 Ayuda al loro a contar
+                            </div>
+                            <iframe src="https://trinket.io/embed/python3/c3fe62330380" width="100%" height="450"
+                                frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge-box">
+                    <div class="interactive-section">
+                        <div class="interactive-section">
+                            <h3>⚔ ¡Practica bucles WHILE!</h3>
+                            <button class="btn" onclick="runWhileTreasure()">
+                                🎲 Desafío 3: Juego de Dados
+                            </button>
+                            <div class="output" id="while-treasure-output">
+                                <p> 👆 Crea un juego donde lanzas dados hasta sacar un 6 (¡el número de la suerte!):</p>
+                            </div>
+                        </div>
+
+                        <div class="code-container">
+                            <div class="code-title">
+                                🎲 Programa tu propio juego
+                            </div>
+                            <iframe src="https://trinket.io/embed/python3/c9d9e058e483" width="100%" height="450"
+                                frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                    <!--h3>⚔️ Desafío 1: La Tripulación</h3>
                     <p>
                         Ayuda al capitán a saludar a cada miembro de su tripulación usando
                         un bucle FOR:
@@ -290,9 +371,9 @@
                             • Usa la variable que creaste en el print()
                         </div>
                     </div>
-                </div>
+                </div-->
 
-                <div class="challenge-box">
+                <!--div class="challenge-box">
                     <h3>🦜 Desafío 2: El Loro Contador</h3>
                     <p>
                         El loro del capitán solo sabe contar hasta que le digamos
@@ -329,9 +410,9 @@
                             • ¡No olvides incrementar 'numero' dentro del bucle!
                         </div>
                     </div>
-                </div>
+                </div-->
 
-                <div class="challenge-box">
+                <!--div class="challenge-box">
                     <h3>🎲 Desafío 3: Juego de Dados</h3>
                     <p>
                         Crea un juego donde lanzas dados hasta sacar un 6 (¡el número de
@@ -369,8 +450,17 @@
                             • ¡Muestra cada resultado!
                         </div>
                     </div>
-                </div>
+                </div-->
             </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
         </div>
 
         <!-- Resumen Final -->
