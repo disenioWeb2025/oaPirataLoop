@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparación FOR vs WHILE - Aventuras Piratas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wave"></div>
+    <div class="container">
+      <div class="header">
+        <h1>🏴‍☠️ Aventuras Piratas 🏴‍☠️</h1>
+        <p>Aprende bucles FOR y WHILE con el Capitán CodeBeard</p>
+        <div class="pirate-emoji">⚔️🦜💰</div>
+        <div class="contador-monedas-container">
+          <div class="monedas-info">
+            <span class="monedas-label">💰 Monedas de Oro:</span>
+            <span id="contador-monedas" class="monedas-count">0</span>
+            <div class="monedas-objetivo">
+              Meta: 12 monedas para ser Maestro Pirata
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navegación Principal -->
+      <div class="lesson-section">
+        <div class="navigation-tabs">
+          <a href="index.html" class="nav-tab">🧭 Introducción</a>
+          <a href="for-loops.html" class="nav-tab">🗺️ Bucles FOR</a>
+          <a href="while-loops.html" class="nav-tab">⚔ Bucles WHILE</a>
+          <a href="comparison.html" class="nav-tab active">⚖️ Comparación</a>
+          <a href="challenges.html" class="nav-tab">🏆 Desafíos</a>
+        </div>
+
+        <!-- Contenido de Comparación -->
+        <div class="comparison-content">
+          <h2 class="lesson-title">⚖️ FOR vs WHILE: ¿Cuándo usar cada uno?</h2>
+
+          <div class="story-box">
+            <p><strong>La Sabiduría del Capitán CodeBeard:</strong></p>
+            <p>
+              "¡Escucha bien, marinero! Elegir el bucle correcto es como elegir
+              el arma correcta para cada batalla. Un bucle FOR es como un mapa
+              del tesoro: sabes exactamente dónde ir. Un bucle WHILE es como la
+              caza de un Kraken: no sabes cuánto durará la pelea, pero sabes
+              cuándo habrá terminado."
+            </p>
+          </div>
+
+          <!-- Tabla de Comparación -->
+          <div class="comparison-section">
+            <h3>📊 Tabla de Comparación</h3>
+            <table class="comparison-table">
+              <tr>
+                <th>Aspecto</th>
+                <th>🗺️ Bucle FOR</th>
+                <th>⚔ Bucle WHILE</th>
+              </tr>
+              <tr>
+                <td><strong>¿Cuándo usar?</strong></td>
+                <td>Cuando SABES cuántas veces repetir</td>
+                <td>Cuando NO SABES cuántas veces repetir</td>
+              </tr>
+              <tr>
+                <td><strong>Ejemplo Pirata</strong></td>
+                <td>Visitar 5 islas del mapa</td>
+                <td>Luchar hasta derrotar al Kraken</td>
+              </tr>
+              <tr>
+                <td><strong>Sintaxis</strong></td>
+                <td><code>for item in lista:</code></td>
+                <td><code>while condicion:</code></td>
+              </tr>
+              <tr>
+                <td><strong>Control</strong></td>
+                <td>Automático</td>
+                <td>Manual</td>
+              </tr>
+              <tr>
+                <td><strong>Riesgo de bucle infinito</strong></td>
+                <td>Muy bajo</td>
+                <td>Posible si no actualizas la condición</td>
+              </tr>
+              <tr>
+                <td><strong>Casos típicos</strong></td>
+                <td>Listas, rangos numéricos, colecciones</td>
+                <td>Validaciones, búsquedas, condiciones variables</td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Ejemplos Prácticos -->
+          <div class="examples-section">
+            <h3>🧭 Ejemplos Prácticos de Decisión</h3>
+
+            <div class="example-container">
+              <div class="example-box for-example">
+                <h4>🗺️ Usar FOR cuando...</h4>
+                <ul>
+                  <li>
+                    <strong>Contar tripulantes:</strong> "Tengo 8 piratas en mi
+                    tripulación"
+                  </li>
+                  <li>
+                    <strong>Recorrer islas:</strong> "Mi mapa marca exactamente
+                    5 islas"
+                  </li>
+                  <li>
+                    <strong>Inventario:</strong> "Revisar cada cofre de mi
+                    bodega"
+                  </li>
+                  <li>
+                    <strong>Tareas repetitivas:</strong> "Disparar exactamente
+                    10 cañonazos"
+                  </li>
+                </ul>
+                <div class="code-example">
+                  <strong>Código típico:</strong>
+                  <pre>
+for pirata in tripulacion:
+    print(f"¡Ahoy {pirata}!")
+                  </pre>
+                </div>
+              </div>
+
+              <div class="example-box while-example">
+                <h4>⚔ Usar WHILE cuando...</h4>
+                <ul>
+                  <li>
+                    <strong>Batallar:</strong> "Luchar hasta que el enemigo sea
+                    derrotado"
+                  </li>
+                  <li>
+                    <strong>Buscar tesoros:</strong> "Cavar hasta encontrar el
+                    cofre"
+                  </li>
+                  <li>
+                    <strong>Navegar:</strong> "Remar mientras haya tormenta"
+                  </li>
+                  <li>
+                    <strong>Validar entrada:</strong> "Preguntar hasta que la
+                    respuesta sea válida"
+                  </li>
+                </ul>
+                <div class="code-example">
+                  <strong>Código típico:</strong>
+                  <pre>
+while vida_kraken > 0:
+    atacar_kraken()
+    vida_kraken -= daño
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Casos Especiales -->
+          <div class="special-cases">
+            <h3>🎯 Casos Especiales</h3>
+
+            <div class="case-box">
+              <h4>🔄 ¿Se puede convertir FOR en WHILE?</h4>
+              <p>
+                <strong>¡Sí!</strong> Todo bucle FOR se puede escribir como
+                WHILE, pero no siempre es la mejor idea:
+              </p>
+              <div class="comparison-code">
+                <div class="code-side">
+                  <strong>Versión FOR (Recomendada):</strong>
+                  <pre>
+for i in range(5):
+    print(f"Isla {i+1}")
+                  </pre>
+                </div>
+                <div class="code-side">
+                  <strong>Versión WHILE (Más complicada):</strong>
+                  <pre>
+i = 0
+while i < 5:
+    print(f"Isla {i+1}")
+    i += 1  # ¡No olvides esto!
+                  </pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-box">
+              <h4>⚠️ Errores Comunes</h4>
+              <ul>
+                <li>
+                  <strong>Bucle infinito en WHILE:</strong> Olvidar actualizar
+                  la condición
+                </li>
+                <li>
+                  <strong>FOR innecesario:</strong> Usar FOR cuando no sabes
+                  cuántas iteraciones necesitas
+                </li>
+                <li>
+                  <strong>Condición mal planteada:</strong> Usar &lt; cuando
+                  necesitas &lt;=
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Decisión Rápida -->
+          <div class="treasure-box">
+            <h3>🧠 Guía de Decisión Rápida</h3>
+            <div class="decision-flow">
+              <p><strong>Pregúntate:</strong></p>
+              <ol>
+                <li>
+                  <strong>¿Tengo una lista o colección para recorrer?</strong> →
+                  Usa <code>FOR</code>
+                </li>
+                <li>
+                  <strong>¿Sé exactamente cuántas veces repetir?</strong> → Usa
+                  <code>FOR</code>
+                </li>
+                <li>
+                  <strong>¿Debo repetir "hasta que algo ocurra"?</strong> → Usa
+                  <code>WHILE</code>
+                </li>
+                <li>
+                  <strong
+                    >¿La condición puede cambiar durante la ejecución?</strong
+                  >
+                  → Usa <code>WHILE</code>
+                </li>
+              </ol>
+            </div>
+            <p>
+              <strong>¡Recuerda:</strong> En caso de duda, FOR suele ser más
+              seguro y fácil de entender.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <p>
+          Creado por: Elizabeth Izquierdo - Néstor Larroca · Licencia
+          <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/"
+            target="_blank"
+            >CC BY-SA 4.0</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Marcar esta sección como visitada
+      if (typeof tabsVisitados !== "undefined") {
+        tabsVisitados.add("comparison-tab");
+        verificarVictoria();
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

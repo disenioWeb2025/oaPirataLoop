@@ -41,19 +41,170 @@ body {
     color: #87ceeb;
 }
 
-footer {
-  background-color: #222;
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-  border-top: 2px solid #87ceeb;;
+/* ===== NAVEGACIÓN PRINCIPAL ===== */
+.navigation-tabs {
+    display: flex;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
 }
 
-footer a {
-  color: #87ceeb;;
+.nav-tab {
+    flex: 1;
+    padding: 15px;
+    background: transparent;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid transparent;
 }
 
-/* ===== SECCIONES DE LECCIÓN ===== */
+.nav-tab:hover {
+    background: rgba(255, 215, 0, 0.1);
+    transform: translateY(-2px);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.nav-tab.active {
+    background: linear-gradient(45deg, #ffd700, #f39c12);
+    color: #2c3e50;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* ===== CONTENIDO DE INTRODUCCIÓN ===== */
+.intro-content {
+    background: #fff8dc;
+    color: #1a1a1a;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 3px solid #d35400;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-content::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(211, 84, 0, 0.05) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+    pointer-events: none;
+}
+
+.welcome-story {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.captain-intro {
+    background: linear-gradient(135deg, #f4e4bc, #e8d5a3);
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid #d35400;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 10px rgba(211, 84, 0, 0.1);
+}
+
+.captain-intro h3 {
+    color: #d35400;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.adventure-description {
+    background: rgba(135, 206, 235, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #87ceeb;
+}
+
+/* ===== SECCIONES DE CONTENIDO ===== */
+.objectives-section,
+.game-rules,
+.start-adventure {
+    position: relative;
+    z-index: 2;
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.objectives-section h3,
+.game-rules h3,
+.start-adventure h3 {
+    color: #e67e22;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.objectives-list,
+.rules-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.objectives-list li,
+.rules-list li {
+    padding: 8px 0;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.objectives-list li::before {
+    content: "⚓";
+    position: absolute;
+    left: 0;
+    color: #e67e22;
+    font-size: 1.2em;
+}
+
+.rules-list li::before {
+    content: "💰";
+    position: absolute;
+    left: 0;
+    font-size: 1.1em;
+}
+
+.adventure-path {
+    background: rgba(52, 152, 219, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #3498db;
+    margin-top: 15px;
+}
+
+.adventure-path li {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.rule-section {
+    margin: 20px 0;
+}
+
+/* ===== SECCIONES DE LECCIÓN (para otras páginas) ===== */
 .lesson-section {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -84,6 +235,8 @@ footer a {
     text-align: center;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
 }
 
 /* ===== CAJAS DE HISTORIA ===== */
@@ -93,6 +246,8 @@ footer a {
     border-radius: 10px;
     margin: 20px 0;
     border-left: 5px solid #ffd700;
+    position: relative;
+    z-index: 2;
 }
 
 /* ===== CONTENEDORES DE CÓDIGO ===== */
@@ -105,6 +260,7 @@ footer a {
     border: 2px solid #34495e;
     position: relative;
     overflow-x: auto;
+    z-index: 2;
 }
 
 .code-container::before {
@@ -127,64 +283,6 @@ footer a {
     font-weight: bold;
 }
 
-.code {
-    color: #ecf0f1;
-    line-height: 1.8;
-    font-size: 1rem;
-    position: relative;
-    white-space: pre;
-}
-
-/* ===== INDENTACIÓN VISUAL ===== */
-.indent-1 {
-    padding-left: 2em;
-    position: relative;
-}
-
-.indent-1::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: rgba(255, 215, 0, 0.3);
-    border-radius: 1px;
-}
-
-/* ===== SINTAXIS DE CÓDIGO ===== */
-.keyword {
-    color: #3498db;
-    font-weight: bold;
-}
-
-.string {
-    color: #2ecc71;
-}
-
-.comment {
-    color: #95a5a6;
-    font-style: italic;
-}
-
-.number {
-    color: #e67e22;
-}
-
-/* ===== SECCIONES INTERACTIVAS ===== */
-.interactive-section {
-    background: rgba(46, 204, 113, 0.2);
-    border-radius: 15px;
-    padding: 25px;
-    margin: 25px 0;
-    border: 2px solid #2ecc71;
-    transition: transform 0.3s ease;
-}
-
-.interactive-section:hover {
-    transform: translateY(-2px);
-}
-
 /* ===== BOTONES ===== */
 .btn {
     background: linear-gradient(45deg, #e74c3c, #c0392b);
@@ -203,19 +301,6 @@ footer a {
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(231, 76, 60, 0.6);
-}
-
-/* ===== SALIDA DE CÓDIGO ===== */
-.output {
-    background: #34495e;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 15px 0;
-    font-family: 'Courier New', monospace;
-    color: #2ecc71;
-    border: 2px solid #2ecc71;
-    min-height: 100px;
-    white-space: pre-wrap;
 }
 
 /* ===== CONTADOR DE MONEDAS ===== */
@@ -254,10 +339,6 @@ footer a {
     color: #87ceeb;
     margin-top: 5px;
     font-style: italic;
-}
-
-.ejercicio-completado {
-    animation: slideInRight 0.5s ease !important;
 }
 
 /* ===== ANIMACIONES ===== */
@@ -305,17 +386,6 @@ footer a {
     }
 }
 
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
 @keyframes float {
     0%, 100% { 
         transform: translateY(0px); 
@@ -343,48 +413,44 @@ footer a {
     }
 }
 
-@keyframes ripple {
-    to {
-        transform: scale(4);
-        opacity: 0;
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
     }
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+/* ===== SECCIONES INTERACTIVAS ===== */
+.interactive-section {
+    background: rgba(46, 204, 113, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 25px 0;
+    border: 2px solid #2ecc71;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
-@keyframes slideOut {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(100%);
-        opacity: 0;
-    }
+.interactive-section:hover {
+    transform: translateY(-2px);
 }
 
-@keyframes celebration {
-    0% {
-        transform: translate(-50%, -50%) scale(0) rotate(180deg);
-        opacity: 0;
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.2) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1) rotate(0deg);
-        opacity: 1;
-    }
+/* ===== SALIDA DE CÓDIGO ===== */
+.output {
+    background: #34495e;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    font-family: 'Courier New', monospace;
+    color: #2ecc71;
+    border: 2px solid #2ecc71;
+    min-height: 100px;
+    white-space: pre-wrap;
 }
 
 /* ===== CAJAS ESPECIALES ===== */
@@ -404,45 +470,8 @@ footer a {
     border-radius: 15px;
     padding: 25px;
     margin: 25px 0;
-}
-
-/* ===== SISTEMA DE PESTAÑAS ===== */
-.tabs {
-    display: flex;
-    margin-bottom: 20px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 5px;
-}
-
-.tab {
-    flex: 1;
-    padding: 15px;
-    background: transparent;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-}
-
-.tab-content {
-    display: none;
-}
-.tab-content.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.tab.active {
-    background: #ffd700;
-    color: #2c3e50;
-    font-weight: bold;
+    position: relative;
+    z-index: 2;
 }
 
 /* ===== TABLA DE COMPARACIÓN ===== */
@@ -453,6 +482,8 @@ footer a {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
+    z-index: 2;
 }
 
 .comparison-table th,
@@ -468,6 +499,60 @@ footer a {
     font-weight: bold;
 }
 
+/* ===== QUIZZES ===== */
+.quiz {
+    margin-top: 15px;
+    padding: 15px;
+    border: 2px solid #f39c12;
+    border-radius: 10px;
+    background: rgba(241, 196, 15, 0.1);
+    color: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+.quiz label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.quiz input[type="radio"] {
+    margin-right: 10px;
+}
+
+.quiz button {
+    margin-top: 10px;
+    background: #f39c12;
+    color: #2c3e50;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.quiz button:hover {
+    background: #e67e22;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #222;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 2px solid #87ceeb;
+    margin-top: 40px;
+    border-radius: 10px 10px 0 0;
+}
+
+footer a {
+    color: #87ceeb;
+}
+
 /* ===== ONDA DE FONDO ===== */
 .wave {
     position: fixed;
@@ -478,142 +563,6 @@ footer a {
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48V0h1200v120z" fill="%23ffffff" fill-opacity="0.1"/></svg>');
     z-index: -1;
     animation: wave 3s linear infinite;
-}
-
-/* ===== EDITOR DE CÓDIGO ===== */
-.code-editor {
-    background: #2c3e50;
-    border-radius: 10px;
-    margin: 20px 0;
-    border: 2px solid #34495e;
-    overflow: hidden;
-}
-
-.editor-header {
-    background: #34495e;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.editor-title {
-    color: #ffd700;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-.editor-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.editor-btn {
-    background: #27ae60;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.editor-btn:hover {
-    background: #2ecc71;
-    transform: translateY(-2px);
-}
-
-.editor-btn.clear {
-    background: #e74c3c;
-}
-
-.editor-btn.clear:hover {
-    background: #c0392b;
-}
-
-.code-textarea {
-    width: 100%;
-    height: 200px;
-    background: #2c3e50;
-    color: #ecf0f1;
-    border: none;
-    padding: 20px;
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
-    line-height: 1.5;
-    resize: vertical;
-    outline: none;
-}
-
-.code-textarea:focus {
-    background: #34495e;
-}
-
-.editor-output {
-    background: #1a252f;
-    color: #2ecc71;
-    padding: 15px 20px;
-    font-family: 'Courier New', monospace;
-    font-size: 13px;
-    line-height: 1.4;
-    white-space: pre-wrap;
-    border-top: 1px solid #34495e;
-    min-height: 60px;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.error {
-    color: #e74c3c !important;
-}
-
-.success {
-    color: #2ecc71 !important;
-}
-
-/* ===== BOTÓN DE AYUDA ===== */
-.help-btn {
-    background: #3498db;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.help-btn:hover {
-    background: #2980b9;
-}
-
-.hint-box {
-    background: rgba(52, 152, 219, 0.2);
-    border: 2px solid #3498db;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 10px 0;
-    display: none;
-}
-
-.hint-box.show {
-    display: block;
-    animation: fadeIn 0.3s ease;
-}
-
-/* ===== CALLOUT PARA INDENTACIÓN ===== */
-.indent-callout {
-    background: rgba(255, 193, 7, 0.2);
-    border: 2px solid #ffc107;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 15px 0;
-}
-
-.indent-callout h4 {
-    color: #ffc107;
-    margin-bottom: 10px;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -630,15 +579,17 @@ footer a {
         padding: 10px;
     }
 
-    .lesson-section {
+    .lesson-section,
+    .intro-content {
         padding: 20px;
     }
 
-    .tabs {
+    .navigation-tabs {
         flex-direction: column;
+        gap: 5px;
     }
 
-    .tab {
+    .nav-tab {
         margin-bottom: 5px;
     }
 
@@ -650,75 +601,28 @@ footer a {
     .comparison-table td {
         padding: 10px;
     }
+
+    .intro-content {
+        padding: 25px;
+    }
+
+    .captain-intro {
+        padding: 20px;
+    }
 }
 
-.quiz-box {
-    margin-top: 15px;
-    padding: 15px;
-    border: 2px solid #f39c12;
-    border-radius: 10px;
-    background: rgba(241, 196, 15, 0.1);
-    color: #fff;
+/* ===== EJERCICIOS COMPLETADOS ===== */
+.ejercicio-completado {
+    animation: slideInRight 0.5s ease !important;
 }
 
-.quiz-box label {
-    display: block;
-    margin: 8px 0;
-    cursor: pointer;
-    font-size: 1rem;
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
-
-.quiz-box input[type="radio"] {
-    margin-right: 10px;
-}
-
-.quiz-box button {
-    margin-top: 10px;
-    background: #f39c12;
-    color: #2c3e50;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.quiz-box button:hover {
-    background: #e67e22;
-}
-/* Estilos para el tab de introducción */
-#intro-tab .story-box {
-  background: #fff8dc; /* Fondo claro tipo pergamino */
-  color: #1a1a1a;       /* Texto negro para alto contraste */
-  border-left: 6px solid #d35400;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-
-#intro-tab h3 {
-  color: #e67e22;
-  margin-top: 1.5em;
-}
-
-#intro-tab ul {
-  list-style-type: "⚓ ";
-  margin-left: 1.5em;
-  padding-left: 0;
-}
-
-#intro-tab ul li {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-#intro-tab p {
-  font-size: 1.05rem;
-  line-height: 1.6;
-}
-

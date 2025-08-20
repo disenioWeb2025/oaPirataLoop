@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bucles FOR - Aventuras Piratas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wave"></div>
+    <div class="container">
+      <div class="header">
+        <h1>🏴‍☠️ Aventuras Piratas 🏴‍☠️</h1>
+        <p>Aprende bucles FOR y WHILE con el Capitán CodeBeard</p>
+        <div class="pirate-emoji">⚔️🦜💰</div>
+        <div class="contador-monedas-container">
+          <div class="monedas-info">
+            <span class="monedas-label">💰 Monedas de Oro:</span>
+            <span id="contador-monedas" class="monedas-count">0</span>
+            <div class="monedas-objetivo">
+              Meta: 12 monedas para ser Maestro Pirata
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navegación Principal -->
+      <div class="lesson-section">
+        <div class="navigation-tabs">
+          <a href="index.html" class="nav-tab">🧭 Introducción</a>
+          <a href="for-loops.html" class="nav-tab active">🗺️ Bucles FOR</a>
+          <a href="while-loops.html" class="nav-tab">⚔ Bucles WHILE</a>
+          <a href="comparison.html" class="nav-tab">⚖️ Comparación</a>
+          <a href="challenges.html" class="nav-tab">🏆 Desafíos</a>
+        </div>
+
+        <!-- Contenido FOR -->
+        <div class="for-content">
+          <h2 class="lesson-title">
+            🗺️ Bucle FOR: Siguiendo el Mapa del Tesoro
+          </h2>
+
+          <div class="story-box">
+            <p>
+              <strong>Historia:</strong> El Capitán CodeBeard tiene un mapa con
+              5 islas marcadas. Cada isla contiene un tesoro, pero para
+              encontrarlos todos, necesitamos visitar cada una de ellas de
+              manera sistemática. ¡Los bucles FOR son perfectos para esta tarea!
+            </p>
+            <p>
+              Un bucle FOR se usa cuando
+              <strong>sabemos exactamente cuántas veces</strong> queremos
+              repetir una acción.
+            </p>
+          </div>
+
+          <!-- Primer Ejercicio: Islas -->
+          <div class="interactive-section">
+            <h3>🎮 ¡Prueba el código!</h3>
+            <div class="output" id="for-output">
+              <p>Presiona el botón Run para comenzar la aventura...</p>
+            </div>
+            <div class="code-container">
+              <div class="code-title">🏝️ Visitando las 5 Islas del Tesoro</div>
+              <iframe
+                src="https://trinket.io/embed/python3/c5fa7e2261ce"
+                width="100%"
+                height="350"
+                frameborder="0"
+                data-exercise="for-islas"
+              ></iframe>
+              <div class="quiz">
+                <p>
+                  <strong
+                    >¿Cuántas veces se imprime la línea "💰 ¡Tesoro
+                    encontrado!"?</strong
+                  ><br />
+                </p>
+                <form>
+                  <label
+                    ><input type="radio" name="quiz-for-islas" value="a" /> a) 1
+                    vez</label
+                  >
+                  <label
+                    ><input type="radio" name="quiz-for-islas" value="b" /> b) 3
+                    veces</label
+                  >
+                  <label
+                    ><input type="radio" name="quiz-for-islas" value="c" /> c) 5
+                    veces</label
+                  >
+                  <label
+                    ><input type="radio" name="quiz-for-islas" value="d" /> d)
+                    Depende del usuario</label
+                  ><br />
+                  <button
+                    type="button"
+                    onclick="verificarRespuesta('for-islas', 'c')"
+                  >
+                    Responder
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Segundo Ejercicio: Monedas -->
+          <div class="interactive-section">
+            <h3>🎮 ¡Continua probando código!</h3>
+            <div class="output" id="for-output2">
+              <p>Luego de ejecutar, haz cambios...</p>
+            </div>
+            <div class="code-container">
+              <div class="code-title">
+                🔢 Contando Monedas de Oro (FOR con números)
+              </div>
+              <iframe
+                src="https://trinket.io/embed/python3/7b273451c092"
+                width="100%"
+                height="350"
+                frameborder="0"
+                data-exercise="for-monedas"
+              ></iframe>
+              <div class="quiz">
+                <p>
+                  <strong
+                    >¿Qué ocurriría si se usara <code>range(1, 11, 2)</code> en
+                    lugar de <code>range(1, 11)</code> en el código?</strong
+                  >
+                </p>
+                <br />
+                <form>
+                  <label
+                    ><input type="radio" name="quiz-for-monedas" value="a" /> a)
+                    Solo se imprimirán los números pares entre 1 y 10.</label
+                  >
+                  <label
+                    ><input type="radio" name="quiz-for-monedas" value="b" /> b)
+                    Solo se imprimirán los números impares entre 1 y 10.</label
+                  >
+                  <label
+                    ><input type="radio" name="quiz-for-monedas" value="c" /> c)
+                    El bucle no se ejecutará porque el rango está mal
+                    definido.</label
+                  >
+                  <label
+                    ><input type="radio" name="quiz-for-monedas" value="d" /> d)
+                    Se imprimirá un error porque range() no acepta tres
+                    argumentos.</label
+                  ><br />
+                  <button
+                    type="button"
+                    onclick="verificarRespuesta('for-monedas', 'b')"
+                  >
+                    Responder
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tercer Ejercicio: Números -->
+          <div class="interactive-section">
+            <h3>🎮 ¡Continua con más pruebas!</h3>
+            <div class="output" id="for-output3">
+              <p>Experimenta con range...</p>
+            </div>
+            <div class="code-container">
+              <div class="code-title">🔢 ¡Contando piratas!</div>
+              <iframe
+                src="https://trinket.io/embed/python3/1c13e72c3991"
+                width="100%"
+                height="350"
+                frameborder="0"
+                data-exercise="for-numeros"
+              ></iframe>
+              <div class="quiz">
+                <p><strong>¿Qué controla el número de repeticiones?</strong></p>
+                <br />
+                <form>
+                  <label
+                    ><input type="radio" name="quiz-for-numeros" value="a" /> a)
+                    El valor final en range()</label
+                  >
+                  <label
+                    ><input type="radio" name="quiz-for-numeros" value="b" /> b)
+                    Una lista de cadenas</label
+                  >
+                  <label
+                    ><input type="radio" name="quiz-for-numeros" value="c" /> c)
+                    La variable 'isla'</label
+                  >
+                  <label
+                    ><input type="radio" name="quiz-for-numeros" value="d" /> d)
+                    Ninguno</label
+                  ><br />
+                  <button
+                    type="button"
+                    onclick="verificarRespuesta('for-numeros', 'a')"
+                  >
+                    Responder
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Explicación Técnica -->
+          <div class="treasure-box">
+            <h3>🧭 Resumen del Bucle FOR</h3>
+            <p>
+              <strong>¿Cuándo usar FOR?</strong> Cuando sabes exactamente
+              cuántas veces quieres repetir algo:
+            </p>
+            <ul>
+              <li>
+                Recorrer una lista de elementos (islas, tripulantes, tesoros)
+              </li>
+              <li>Repetir una acción un número específico de veces</li>
+              <li>Procesar cada elemento de una colección</li>
+            </ul>
+            <p><strong>Sintaxis básica:</strong></p>
+            <pre
+              style="
+                background: #2c3e50;
+                color: #ecf0f1;
+                padding: 10px;
+                border-radius: 5px;
+                margin: 10px 0;
+              "
+            >
+for elemento in lista:
+    # código a repetir
+    print(elemento)
+            </pre>
+            <p>
+              <strong>¡Perfecto para aventuras piratas organizadas!</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <p>
+          Creado por: Elizabeth Izquierdo - Néstor Larroca · Licencia
+          <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/"
+            target="_blank"
+            >CC BY-SA 4.0</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
