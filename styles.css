@@ -218,10 +218,102 @@ footer a {
     white-space: pre-wrap;
 }
 
+/* ===== CONTADOR DE MONEDAS ===== */
+.contador-monedas-container {
+    margin-top: 20px;
+    background: rgba(241, 196, 15, 0.2);
+    border: 2px solid #f1c40f;
+    border-radius: 15px;
+    padding: 15px;
+    display: inline-block;
+}
+
+.monedas-info {
+    text-align: center;
+}
+
+.monedas-label {
+    font-size: 1.2rem;
+    color: #f1c40f;
+    font-weight: bold;
+}
+
+.monedas-count {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 10px;
+    background: linear-gradient(45deg, #f1c40f, #e67e22);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.monedas-objetivo {
+    font-size: 0.9rem;
+    color: #87ceeb;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.ejercicio-completado {
+    animation: slideInRight 0.5s ease !important;
+}
+
 /* ===== ANIMACIONES ===== */
 .pirate-emoji {
     font-size: 2rem;
     animation: float 3s ease-in-out infinite;
+}
+
+@keyframes coinBounce {
+    0%, 100% { 
+        transform: scale(1); 
+    }
+    50% { 
+        transform: scale(1.3); 
+    }
+}
+
+@keyframes rewardSlide {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    10%, 90% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes victoryBounce {
+    0% {
+        transform: scale(0.3) rotate(-10deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1) rotate(5deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @keyframes float {
@@ -529,33 +621,104 @@ footer a {
     .header h1 {
         font-size: 2.5rem;
     }
-    
+
     .lesson-title {
         font-size: 2rem;
     }
-    
+
     .container {
         padding: 10px;
     }
-    
+
     .lesson-section {
         padding: 20px;
     }
-    
+
     .tabs {
         flex-direction: column;
     }
-    
+
     .tab {
         margin-bottom: 5px;
     }
-    
+
     .comparison-table {
         font-size: 0.9rem;
     }
-    
+
     .comparison-table th,
     .comparison-table td {
         padding: 10px;
     }
 }
+
+.quiz-box {
+    margin-top: 15px;
+    padding: 15px;
+    border: 2px solid #f39c12;
+    border-radius: 10px;
+    background: rgba(241, 196, 15, 0.1);
+    color: #fff;
+}
+
+.quiz-box label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.quiz-box input[type="radio"] {
+    margin-right: 10px;
+}
+
+.quiz-box button {
+    margin-top: 10px;
+    background: #f39c12;
+    color: #2c3e50;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.quiz-box button:hover {
+    background: #e67e22;
+}
+/* Estilos para el tab de introducción */
+#intro-tab .story-box {
+  background: #fff8dc; /* Fondo claro tipo pergamino */
+  color: #1a1a1a;       /* Texto negro para alto contraste */
+  border-left: 6px solid #d35400;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+
+#intro-tab h3 {
+  color: #e67e22;
+  margin-top: 1.5em;
+}
+
+#intro-tab ul {
+  list-style-type: "⚓ ";
+  margin-left: 1.5em;
+  padding-left: 0;
+}
+
+#intro-tab ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+#intro-tab p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
