@@ -1,4 +1,4 @@
-// ===== SISTEMA DE PUNTUACIÓN =====
+// ===== SISTEMA DE PUNTUACIÓN MULTI-PÁGINA =====
 let monedasOro = 0;
 let ejerciciosCompletados = new Set();
 let tabsVisitados = new Set();
@@ -11,7 +11,7 @@ const PUNTOS = {
 
 const EJERCICIOS_REQUERIDOS = [
   "for-islas",
-  "for-monedas",
+  "for-monedas", 
   "for-numeros",
   "while-kraken",
   "while-tesoro",
@@ -25,11 +25,31 @@ const MONEDAS_PARA_GANAR = 12;
 
 const TABS_REQUERIDOS = [
   "for-tab",
-  "while-tab",
+  "while-tab", 
   "comparison-tab",
   "challenges-tab",
 ];
 
+// ===== FUNCIONES DE ALMACENAMIENTO (IN-MEMORY) =====
+function guardarProgreso() {
+  // En el entorno de Claude, se usa almacenamiento en memoria
+  // Los datos se perderán al recargar la página
+  console.log('Progreso guardado en memoria:', {
+    monedas: monedasOro,
+    ejercicios: Array.from(ejerciciosCompletados),
+    tabs: Array.from(tabsVisitados)
+  });
+}
+
+function cargarProgreso() {
+  const contadorMonedas = document.getElementById("contador-monedas");
+  if (contadorMonedas) {
+    contadorMonedas.textContent = monedasOro;
+  }
+  verificarVictoria();
+}
+
+// ===== FUNCIONES DE MONEDAS =====
 function actualizarMonedas() {
   const contadorMonedas = document.getElementById("contador-monedas");
   if (contadorMonedas) {
@@ -39,6 +59,7 @@ function actualizarMonedas() {
       contadorMonedas.style.animation = "";
     }, 600);
   }
+  guardarProgreso();
   verificarVictoria();
 }
 
@@ -73,8 +94,8 @@ function mostrarRecompensa(cantidad, esDesafio = false) {
   `;
 
   const tipoRecompensa = esDesafio
-    ? "Desafío completado!"
-    : "Ejemplo ejecutado!";
+    ? "¡Desafío completado!"
+    : "¡Ejemplo ejecutado!";
   recompensa.innerHTML = `
     💰 +${cantidad} Moneda${cantidad > 1 ? "s" : ""} de Oro!<br>
     <span style="font-size: 0.9em;">🏴‍☠️ ${tipoRecompensa}</span>
@@ -84,6 +105,7 @@ function mostrarRecompensa(cantidad, esDesafio = false) {
   setTimeout(() => recompensa.remove(), 3000);
 }
 
+// ===== VERIFICACIÓN DE VICTORIA =====
 function verificarVictoria() {
   const ejerciciosCompletos = EJERCICIOS_REQUERIDOS.filter((ej) =>
     ejerciciosCompletados.has(ej)
@@ -190,7 +212,19 @@ function mostrarVictoria() {
         font-weight: bold;
         cursor: pointer;
         margin-top: 10px;
+        margin-right: 10px;
       ">¡Continuar la Aventura!</button>
+      <button onclick="reiniciarProgreso()" style="
+        background: #e74c3c;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
+      ">🔄 Reiniciar Aventura</button>
     </div>
   `;
 
@@ -205,6 +239,16 @@ function cerrarVictoria() {
   if (victoria) victoria.remove();
 }
 
+function reiniciarProgreso() {
+  // Reiniciar variables en memoria
+  monedasOro = 0;
+  ejerciciosCompletados = new Set();
+  tabsVisitados = new Set();
+  actualizarMonedas();
+  cerrarVictoria();
+  alert("¡Aventura reiniciada! Puedes empezar de nuevo.");
+}
+
 function mostrarMensajeFinal() {
   const felicidades = document.getElementById("final-felicidades");
   if (felicidades) {
@@ -213,6 +257,7 @@ function mostrarMensajeFinal() {
   }
 }
 
+// ===== FUNCIONES DE EJERCICIOS =====
 function marcarEjercicioCompletado(ejercicioId) {
   const iframe = document.querySelector(
     `iframe[data-exercise="${ejercicioId}"]`
@@ -260,29 +305,56 @@ function verificarRespuesta(ejercicioId, respuestaCorrecta) {
   }
 }
 
-// ===== SISTEMA DE PESTAÑAS =====
-function showTab(tabId, el) {
-  document.querySelectorAll(".tab-content").forEach((tab) => {
-    tab.classList.remove("active");
-    tab.style.display = "none";
-  });
-
-  document.querySelectorAll(".tab").forEach((tab) => {
-    tab.classList.remove("active");
-  });
-
-  const currentTab = document.getElementById(tabId);
-  if (currentTab) {
-    currentTab.classList.add("active");
-    currentTab.style.display = "block";
-  }
-
-  if (el) {
-    el.classList.add("active");
-  }
-
+// ===== FUNCIONES DE NAVEGACIÓN =====
+function marcarTabVisitado(tabId) {
   if (!tabsVisitados.has(tabId)) {
     tabsVisitados.add(tabId);
+    guardarProgreso();
     verificarVictoria();
   }
+}
+
+// ===== INICIALIZACIÓN =====
+document.addEventListener('DOMContentLoaded', function() {
+  // Cargar progreso al cargar la página
+  cargarProgreso();
+  
+  // Marcar tab actual como visitado basado en la página
+  const currentPage = window.location.pathname.split('/').pop();
+  let currentTab = '';
+  
+  switch(currentPage) {
+    case 'index.html':
+    case '':
+      currentTab = 'intro-tab';
+      break;
+    case 'for-loops.html':
+      currentTab = 'for-tab';
+      break;
+    case 'while-loops.html':
+      currentTab = 'while-tab';
+      break;
+    case 'comparison.html':
+      currentTab = 'comparison-tab';
+      break;
+    case 'challenges.html':
+      currentTab = 'challenges-tab';
+      break;
+  }
+  
+  if (currentTab && TABS_REQUERIDOS.includes(currentTab)) {
+    marcarTabVisitado(currentTab);
+  }
+  
+  // Marcar ejercicios ya completados visualmente
+  ejerciciosCompletados.forEach(ejercicioId => {
+    setTimeout(() => marcarEjercicioCompletado(ejercicioId), 500);
+  });
+});
+
+// ===== FUNCIONES LEGACY (para compatibilidad) =====
+function showTab(tabId, el) {
+  // Esta función ya no es necesaria en el sistema multi-página
+  // pero se mantiene para compatibilidad
+  console.log('showTab called - redirecting to multi-page navigation');
 }
