@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucles WHILE - Aventuras Piratas</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏴‍☠️ Aventuras Piratas 🏴‍☠️</h1>
+            <p>Aprende bucles FOR y WHILE con el Capitán CodeBeard</p>
+            <div class="pirate-emoji">⚔️🦜🪙</div>
+            <div class="contador-monedas-container">
+                <div class="monedas-info">
+                    <span class="monedas-label">🪙 Monedas de Oro:</span>
+                    <span id="contador-monedas" class="monedas-count">0</span>
+                    <div class="monedas-objetivo">
+                        Meta: 12 monedas para ser Maestro Pirata
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navegación Principal -->
+        <div class="lesson-section">
+            <div class="navigation-tabs">
+                <a href="index.html" class="nav-tab">🧭 Introducción</a>
+                <a href="bucles-for.html" class="nav-tab">🗺️ Bucles FOR</a>
+                <a href="bucles-while.html" class="nav-tab active">⚔️ Bucles WHILE</a>
+                <a href="comparacion.html" class="nav-tab">⚖️ Comparación</a>
+                <a href="desafios.html" class="nav-tab">🏆 Desafíos</a>
+            </div>
+
+            <!-- Contenido WHILE -->
+            <div class="while-content">
+                <h2 class="lesson-title">⚔️ Bucle WHILE: Cazando al Kraken</h2>
+
+                <div class="story-box">
+                    <p>
+                        <strong>Historia:</strong> ¡Un terrible Kraken está atacando
+                        nuestro barco! No sabemos cuántos disparos necesitaremos para
+                        derrotarlo, pero debemos seguir luchando
+                        <strong>mientras</strong> el Kraken tenga vida. ¡Los bucles WHILE
+                        son perfectos para situaciones como esta!
+                    </p>
+                    <p>
+                        Un bucle WHILE se usa cuando
+                        <strong>no sabemos exactamente cuántas veces</strong> necesitamos
+                        repetir algo, pero sí sabemos <strong>cuándo parar</strong>.
+                    </p>
+                </div>
+
+                <!-- Primer Ejercicio: Kraken -->
+                <div class="interactive-section">
+                    <h3>🎮 ¡Batalla contra el Kraken!</h3>
+                    <div class="code-container">
+                        <div class="code-title">🐙 Batalla contra el Kraken</div>
+                        <iframe
+                            src="https://trinket.io/embed/python3/c1da72dd6d57"
+                            width="100%"
+                            height="450"
+                            frameborder="0"
+                            data-exercise="while-kraken"
+                        ></iframe>
+                        <div class="quiz">
+                            <p>
+                                <strong>
+                                    ¿Cuántos disparos se necesitan para derrotar al Kraken si
+                                    cada uno hace 25 de daño y empieza con 100 de vida?
+                                </strong>
+                            </p>
+                            <br>
+                            <form>
+                                <label>
+                                    <input type="radio" name="quiz-while-kraken" value="a">
+                                    a) 3
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-while-kraken" value="b">
+                                    b) 4
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-while-kraken" value="c">
+                                    c) 5
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-while-kraken" value="d">
+                                    d) 10
+                                </label><br>
+                                <button
+                                    type="button"
+                                    onclick="verificarRespuesta('while-kraken', 'b')"
+                                >
+                                    Responder
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segundo Ejercicio: Tesoro -->
+                <div class="interactive-section">
+                    <h3>🎮 ¡Buscando el Tesoro Perdido!</h3>
+                    <div class="code-container">
+                        <div class="code-title">🏴‍☠️ Buscando Tesoros Escondidos</div>
+                        <iframe
+                            src="https://trinket.io/embed/python3/bdb62cc322c9"
+                            width="100%"
+                            height="450"
+                            frameborder="0"
+                            data-exercise="while-tesoro"
+                        ></iframe>
+                        <div class="quiz">
+                            <p>
+                                <strong>
+                                    ¿Qué condición detiene el bucle <code>while</code> en la
+                                    búsqueda del cofre dorado?
+                                </strong>
+                            </p>
+                            <br>
+                            <form>
+                                <label>
+                                    <input type="radio" name="quiz-while-tesoro" value="a">
+                                    a) Cuando <code>intentos</code> llega a 5
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-while-tesoro" value="b">
+                                    b) Cuando se imprime el mensaje "EUREKA"
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-while-tesoro" value="c">
+                                    c) Cuando <code>tesoro_encontrado</code> es
+                                    <code>True</code>
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-while-tesoro" value="d">
+                                    d) Cuando el número de intentos supera 10
+                                </label><br>
+                                <button
+                                    type="button"
+                                    onclick="verificarRespuesta('while-tesoro', 'c')"
+                                >
+                                    Responder
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tercer Ejercicio: Cañones -->
+                <div class="interactive-section">
+                    <h3>🎮 ¡Cargando los Cañones!</h3>
+                    <div class="code-container">
+                        <div class="code-title">💣 Cargando cañones</div>
+                        <iframe
+                            src="https://trinket.io/embed/python3/16d2d826add9"
+                            width="100%"
+                            height="450"
+                            frameborder="0"
+                            data-exercise="while-practica"
+                        ></iframe>
+                        <div class="quiz">
+                            <p>
+                                <strong>
+                                    ¿Cuál debe ser la condición del bucle para cargar
+                                    exactamente 5 cañones (del 1 al 5)?
+                                </strong>
+                            </p>
+                            <br>
+                            <form>
+                                <label>
+                                    <input type="radio" name="quiz-while-practica" value="a">
+                                    a) <code>cañon &lt; 5</code>
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-while-practica" value="b">
+                                    b) <code>cañon &lt;= 5</code>
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-while-practica" value="c">
+                                    c) <code>cañon == 5</code>
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-while-practica" value="d">
+                                    d) <code>cañon &gt;= 1</code>
+                                </label><br>
+                                <button
+                                    type="button"
+                                    onclick="verificarRespuesta('while-practica', 'b')"
+                                >
+                                    Responder
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Explicación Técnica -->
+                <div class="treasure-box">
+                    <h3>⚔️ Resumen del Bucle WHILE</h3>
+                    <p>
+                        <strong>¿Cuándo usar WHILE?</strong> Cuando no sabes exactamente
+                        cuántas veces necesitas repetir, pero sí sabes cuándo parar:
+                    </p>
+                    <ul>
+                        <li>Luchar hasta derrotar a un enemigo</li>
+                        <li>Buscar algo hasta encontrarlo</li>
+                        <li>Repetir hasta que una condición se cumpla</li>
+                        <li>Procesar datos hasta que no haya más</li>
+                    </ul>
+                    <p><strong>Sintaxis básica:</strong></p>
+                    <pre>while condicion:
+    # código a repetir
+    # ¡No olvides actualizar la condición!</pre>
+                    <p>
+                        <strong>⚠️ Cuidado:</strong> Siempre asegúrate de que la condición
+                        pueda volverse False, ¡o tendrás un bucle infinito!
+                    </p>
+                    <p>
+                        <strong>¡Perfecto para batallas piratas impredecibles!</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            Creado por: Elizabeth Izquierdo - Néstor Larroca <br/>· Licencia
+            <a
+                href="https://creativecommons.org/licenses/by-sa/4.0/"
+                target="_blank"
+            >CC BY-SA 4.0</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+/* ===== COMPONENTS STYLES ===== */
+
+/* Header Components */
+.header h1 {
+    font-size: 3rem;
+    color: #fbbf24;
+    text-shadow: 3px 3px 0px #1f2937, -1px -1px 0px #1f2937;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.3rem;
+    color: #e5e7eb;
+    margin-bottom: 20px;
+}
+
+.pirate-emoji {
+    font-size: 2.5rem;
+    margin: 15px 0;
+}
+
+/* Coins Counter Components */
+.contador-monedas-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #f1c40f;
+  padding: 15px 20px;
+  border-radius: 15px;
+  z-index: 999;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+
+.monedas-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fbbf24;
+}
+
+.monedas-count {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fbbf24;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    background: radial-gradient(circle, #92400e 0%, #78350f 100%);
+    border-radius: 50px;
+    border: 2px solid #fbbf24;
+    min-width: 80px;
+    text-align: center;
+}
+
+.monedas-objetivo {
+    font-size: 0.9rem;
+    color: #fde047;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Navigation Components */
+.nav-tab:hover {
+    transform: translateY(-3px);
+    border-color: #fbbf24;
+    box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3);
+}
+
+.nav-tab.active {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1f2937;
+    border-color: #d97706;
+    box-shadow: 0 8px 16px rgba(251, 191, 36, 0.4);
+}
+
+.nav-tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-tab:hover::before {
+    left: 100%;
+}
+
+/* Content Titles */
+.lesson-title {
+    font-size: 2.5rem;
+    color: #fbbf24;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.lesson-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* Story and Content Boxes */
+.story-box, .treasure-box, .welcome-story {
+    background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+    border: 2px solid #34d399;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.story-box::before, .treasure-box::before {
+    content: '🗡️';
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    opacity: 0.3;
+}
+
+.treasure-box::before {
+    content: '🪙';
+}
+
+.story-box p, .treasure-box p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.story-box strong, .treasure-box strong {
+    color: #fde047;
+}
+
+/* Interactive Section Components */
+.interactive-section h3 {
+    color: #fbbf24;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.code-title {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1f2937;
+    padding: 12px 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.code-container iframe {
+    border-radius: 10px;
+    border: 2px solid #4b5563;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Quiz Components */
+.quiz {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(75, 85, 99, 0.6);
+    border-radius: 10px;
+    border-left: 4px solid #fbbf24;
+}
+
+.quiz p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #fde047;
+    font-weight: bold;
+}
+
+.quiz label {
+    display: block;
+    margin: 10px 0;
+    padding: 12px;
+    background: rgba(31, 41, 55, 0.8);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.quiz label:hover {
+    background: rgba(75, 85, 99, 0.8);
+    border-color: #fbbf24;
+    transform: translateX(5px);
+}
+
+.quiz input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #fbbf24;
+}
+
+.quiz button {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.quiz button:hover {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* List Components */
+.objectives-list, .rules-list, .adventure-path {
+    list-style: none;
+    padding-left: 0;
+}
+
+.objectives-list li, .rules-list li, .adventure-path li {
+    background: rgba(31, 41, 55, 0.8);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #34d399;
+    transition: all 0.3s ease;
+}
+
+.objectives-list li:hover, .rules-list li:hover, .adventure-path li:hover {
+    transform: translateX(10px);
+    background: rgba(55, 65, 81, 0.8);
+}
+
+.objectives-list li::before {
+    content: '📌';
+    margin-right: 10px;
+}
+
+.rules-list li::before {
+    content: '⚓';
+    margin-right: 10px;
+}
+
+.adventure-path li::before {
+    content: '🗺️';
+    margin-right: 10px;
+}
+
+.adventure-path li strong {
+    color: #fbbf24;
+}
+
+/* Comparison Table Components */
+.comparison-table th {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1f2937;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.comparison-table td {
+    padding: 15px;
+    border-bottom: 1px solid #4b5563;
+    vertical-align: top;
+}
+
+.comparison-table tr:hover {
+    background: rgba(75, 85, 99, 0.5);
+}
+
+.comparison-table code {
+    background: #1f2937;
+    color: #fde047;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Example Components */
+.example-box {
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid;
+}
+
+.for-example {
+    background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+    border-color: #34d399;
+}
+
+.while-example {
+    background: linear-gradient(135deg, #7c2d12 0%, #9a3412 100%);
+    border-color: #fb923c;
+}
+
+.example-box h4 {
+    color: #fde047;
+    margin-bottom: 15px;
+}
+
+.code-example {
+    background: #1f2937;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border-left: 4px solid #fbbf24;
+}
+
+.code-example strong {
+    color: #fbbf24;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.code-example pre {
+    color: #e5e7eb;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+/* Challenge Components */
+.challenge-box h3 {
+    color: #fde047;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Exercise Completion Marker */
+.ejercicio-completado {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #0c391e;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* Header Effects */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b, #d97706, #fbbf24);
+}
+    

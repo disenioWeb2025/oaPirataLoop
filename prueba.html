@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucles FOR - Aventuras Piratas</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+            to { text-shadow: 2px 2px 20px rgba(255, 215, 0, 0.6); }
+        }
+
+        .pirate-emoji {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+
+        .contador-monedas-container {
+            background: rgba(255, 215, 0, 0.2);
+            border: 2px solid #ffd700;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .monedas-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .monedas-count {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Navigation */
+        .navigation-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .nav-tab {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-tab:hover, .nav-tab.active {
+            background: rgba(255, 215, 0, 0.3);
+            border-color: #ffd700;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Content Sections */
+        .lesson-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .lesson-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #ffd700;
+        }
+
+        .story-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid #ffd700;
+        }
+
+        /* Interactive Sections */
+        .interactive-section {
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .interactive-section h3 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .output {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+            border: 1px solid #333;
+        }
+
+        /* Code Container */
+        .code-container {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .code-title {
+            background: #ffd700;
+            color: #000;
+            padding: 15px 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        iframe {
+            display: block;
+            border: none;
+            background: white;
+        }
+
+        /* Quiz Styles */
+        .quiz {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .quiz form {
+            margin-top: 15px;
+        }
+
+        .quiz label {
+            display: block;
+            margin: 10px 0;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .quiz label:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .quiz input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .quiz button {
+            background: #ffd700;
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .quiz button:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Treasure Box */
+        .treasure-box {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 140, 0, 0.2));
+            border: 2px solid #ffd700;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .treasure-box h3 {
+            color: #ffd700;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .treasure-box ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        .treasure-box li {
+            margin: 8px 0;
+        }
+
+        .treasure-box pre {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            border-left: 4px solid #ffd700;
+            overflow-x: auto;
+        }
+
+        .treasure-box code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .lesson-title {
+                font-size: 1.8em;
+            }
+            
+            .navigation-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-tab {
+                width: 80%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏴‍☠️ Aventuras Piratas 🏴‍☠️</h1>
+            <p>Aprende bucles FOR y WHILE con el Capitán CodeBeard</p>
+            <div class="pirate-emoji">⚔️🦜💰</div>
+            <div class="contador-monedas-container">
+                <div class="monedas-info">
+                    <span class="monedas-label">💰 Monedas de Oro:</span>
+                    <span id="contador-monedas" class="monedas-count">0</span>
+                    <div class="monedas-objetivo">
+                        Meta: 12 monedas para ser Maestro Pirata
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navegación Principal -->
+        <div class="lesson-section">
+            <div class="navigation-tabs">
+                <a href="#" class="nav-tab">🧭 Introducción</a>
+                <a href="#" class="nav-tab active">🗺️ Bucles FOR</a>
+                <a href="#" class="nav-tab">⚔️ Bucles WHILE</a>
+                <a href="#" class="nav-tab">⚖️ Comparación</a>
+                <a href="#" class="nav-tab">🏆 Desafíos</a>
+            </div>
+
+            <!-- Contenido FOR -->
+            <div class="for-content">
+                <h2 class="lesson-title">
+                    🗺️ Bucle FOR: Siguiendo el Mapa del Tesoro
+                </h2>
+
+                <div class="story-box">
+                    <p>
+                        <strong>Historia:</strong> El Capitán CodeBeard tiene un mapa con
+                        5 islas marcadas. Cada isla contiene un tesoro, pero para
+                        encontrarlos todos, necesitamos visitar cada una de ellas de
+                        manera sistemática. ¡Los bucles FOR son perfectos para esta tarea!
+                    </p>
+                    <p>
+                        Un bucle FOR se usa cuando
+                        <strong>sabemos exactamente cuántas veces</strong> queremos
+                        repetir una acción.
+                    </p>
+                </div>
+
+                <!-- Primer Ejercicio: Islas -->
+                <div class="interactive-section">
+                    <h3>🎮 ¡Prueba el código!</h3>
+                    <div class="output" id="for-output">
+                        <p>Presiona el botón Run para comenzar la aventura...</p>
+                    </div>
+                    <div class="code-container">
+                        <div class="code-title">🏝️ Visitando las 5 Islas del Tesoro</div>
+                        <iframe
+                            src="https://trinket.io/embed/python3/c5fa7e2261ce"
+                            width="100%"
+                            height="350"
+                            frameborder="0"
+                            data-exercise="for-islas"
+                        ></iframe>
+                        <div class="quiz">
+                            <p>
+                                <strong>
+                                    ¿Cuántas veces se imprime la línea "💰 ¡Tesoro
+                                    encontrado!"?
+                                </strong><br>
+                            </p>
+                            <form>
+                                <label>
+                                    <input type="radio" name="quiz-for-islas" value="a"> 
+                                    a) 1 vez
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-for-islas" value="b"> 
+                                    b) 3 veces
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-for-islas" value="c"> 
+                                    c) 5 veces
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-for-islas" value="d"> 
+                                    d) Depende del usuario
+                                </label><br>
+                                <button
+                                    type="button"
+                                    onclick="verificarRespuesta('for-islas', 'c')"
+                                >
+                                    Responder
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segundo Ejercicio: Monedas -->
+                <div class="interactive-section">
+                    <h3>🎮 ¡Continua probando código!</h3>
+                    <div class="output" id="for-output2">
+                        <p>Luego de ejecutar, haz cambios...</p>
+                    </div>
+                    <div class="code-container">
+                        <div class="code-title">
+                            🔢 Contando Monedas de Oro (FOR con números)
+                        </div>
+                        <iframe
+                            src="https://trinket.io/embed/python3/7b273451c092"
+                            width="100%"
+                            height="350"
+                            frameborder="0"
+                            data-exercise="for-monedas"
+                        ></iframe>
+                        <div class="quiz">
+                            <p>
+                                <strong>
+                                    ¿Qué ocurriría si se usara <code>range(1, 11, 2)</code> en
+                                    lugar de <code>range(1, 11)</code> en el código?
+                                </strong>
+                            </p>
+                            <br>
+                            <form>
+                                <label>
+                                    <input type="radio" name="quiz-for-monedas" value="a"> 
+                                    a) Solo se imprimirán los números pares entre 1 y 10.
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-for-monedas" value="b"> 
+                                    b) Solo se imprimirán los números impares entre 1 y 10.
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-for-monedas" value="c"> 
+                                    c) El bucle no se ejecutará porque el rango está mal
+                                    definido.
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-for-monedas" value="d"> 
+                                    d) Se imprimirá un error porque range() no acepta tres
+                                    argumentos.
+                                </label><br>
+                                <button
+                                    type="button"
+                                    onclick="verificarRespuesta('for-monedas', 'b')"
+                                >
+                                    Responder
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tercer Ejercicio: Números -->
+                <div class="interactive-section">
+                    <h3>🎮 ¡Continua con más pruebas!</h3>
+                    <div class="output" id="for-output3">
+                        <p>Experimenta con range...</p>
+                    </div>
+                    <div class="code-container">
+                        <div class="code-title">🔢 ¡Contando piratas!</div>
+                        <iframe
+                            src="https://trinket.io/embed/python3/1c13e72c3991"
+                            width="100%"
+                            height="350"
+                            frameborder="0"
+                            data-exercise="for-numeros"
+                        ></iframe>
+                        <div class="quiz">
+                            <p><strong>¿Qué controla el número de repeticiones?</strong></p>
+                            <br>
+                            <form>
+                                <label>
+                                    <input type="radio" name="quiz-for-numeros" value="a"> 
+                                    a) El valor final en range()
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-for-numeros" value="b"> 
+                                    b) Una lista de cadenas
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-for-numeros" value="c"> 
+                                    c) La variable 'isla'
+                                </label>
+                                <label>
+                                    <input type="radio" name="quiz-for-numeros" value="d"> 
+                                    d) Ninguno
+                                </label><br>
+                                <button
+                                    type="button"
+                                    onclick="verificarRespuesta('for-numeros', 'a')"
+                                >
+                                    Responder
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Explicación Técnica -->
+                <div class="treasure-box">
+                    <h3>🧭 Resumen del Bucle FOR</h3>
+                    <p>
+                        <strong>¿Cuándo usar FOR?</strong> Cuando sabes exactamente
+                        cuántas veces quieres repetir algo:
+                    </p>
+                    <ul>
+                        <li>
+                            Recorrer una lista de elementos (islas, tripulantes, tesoros)
+                        </li>
+                        <li>Repetir una acción un número específico de veces</li>
+                        <li>Procesar cada elemento de una colección</li>
+                    </ul>
+                    
+                    <p><strong>Sintaxis básica con listas:</strong></p>
+                    <pre>for elemento in lista:
+    # código a repetir
+    print(elemento)</pre>
+
+                    <p><strong>Sintaxis con range() para números:</strong></p>
+                    <pre>for numero in range(inicio, fin, paso):
+    # código a repetir
+    print(numero)</pre>
+                    
+                    <p><strong>Ejemplos de range():</strong></p>
+                    <ul>
+                        <li><code>range(5)</code> → genera números del 0 al 4 (5 números)</li>
+                        <li><code>range(1, 6)</code> → genera números del 1 al 5</li>
+                        <li><code>range(1, 10, 2)</code> → genera números impares del 1 al 9 (1, 3, 5, 7, 9)</li>
+                        <li><code>range(10, 0, -1)</code> → genera números del 10 al 1 en orden descendente</li>
+                    </ul>
+                    
+                    <p>
+                        <strong>¡Perfecto para aventuras piratas organizadas!</strong>
+                        Usa listas cuando tengas elementos específicos, y range() cuando necesites números secuenciales.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            Creado por: Elizabeth Izquierdo - Néstor Larroca<br/> · Licencia
+            <a
+                href="https://creativecommons.org/licenses/by-sa/4.0/"
+                target="_blank"
+            >CC BY-SA 4.0</a>
+        </p>
+    </footer>
+
+    <script>
+        // Función para verificar respuestas de los quizzes
+        function verificarRespuesta(ejercicio, respuestaCorrecta) {
+            const radios = document.getElementsByName('quiz-' + ejercicio);
+            let respuestaSeleccionada = null;
+            
+            for (let radio of radios) {
+                if (radio.checked) {
+                    respuestaSeleccionada = radio.value;
+                    break;
+                }
+            }
+            
+            if (!respuestaSeleccionada) {
+                alert('Por favor, selecciona una respuesta');
+                return;
+            }
+            
+            if (respuestaSeleccionada === respuestaCorrecta) {
+                alert('¡Correcto! 🏴‍☠️ Has ganado una moneda de oro 💰');
+                actualizarMonedas();
+            } else {
+                alert('Respuesta incorrecta. ¡Inténtalo de nuevo, grumete! 🦜');
+            }
+        }
+        
+        // Función para actualizar el contador de monedas
+        function actualizarMonedas() {
+            const contador = document.getElementById('contador-monedas');
+            let monedasActuales = parseInt(contador.textContent);
+            monedasActuales++;
+            contador.textContent = monedasActuales;
+            
+            // Efecto visual
+            contador.style.transform = 'scale(1.3)';
+            contador.style.color = '#fff';
+            setTimeout(() => {
+                contador.style.transform = 'scale(1)';
+                contador.style.color = '#ffd700';
+            }, 300);
+            
+            // Mensaje especial al alcanzar la meta
+            if (monedasActuales >= 12) {
+                setTimeout(() => {
+                    alert('¡Felicitaciones! 🎉 Has alcanzado la meta y te has convertido en Maestro Pirata! ⚔️');
+                }, 500);
+            }
+        }
+        
+        // Animaciones adicionales al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animación de entrada para las secciones
+            const sections = document.querySelectorAll('.interactive-section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    section.style.transition = 'all 0.6s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
