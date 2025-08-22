@@ -2,7 +2,7 @@
 
 ## Descripción
 
-**Aventuras Piratas** es un objeto de aprendizaje interactivo diseñado para enseñar los conceptos fundamentales de bucles FOR y WHILE en programación Python a través de una narrativa temática de piratas. Los estudiantes acompañan al Capitán CodeBeard en aventuras marítimas mientras aprenden estructuras de control iterativas de manera práctica y entretenida.
+**Aventuras Piratas** es un objeto de aprendizaje interactivo diseñado para repasar los conceptos fundamentales de bucles FOR y WHILE en programación Python a través de una narrativa temática de piratas. Los estudiantes acompañan al Capitán CodeBeard en aventuras marítimas mientras utilizan estructuras de control iterativas de manera práctica y entretenida.
 
 ## Objetivos de Aprendizaje
 
@@ -63,15 +63,11 @@ Al completar este objeto de aprendizaje, los estudiantes serán capaces de:
 css/
 ├── base.css        # Estilos base y tipografía
 ├── layout.css      # Sistema de layout y grillas
-├── components.css  # Componentes reutilizables
-├── animations.css  # Animaciones y transiciones
-├── responsive.css  # Diseño responsivo
-└── footer.css      # Estilos específicos del pie de página
+└── components.css  # Componentes reutilizables
 ```
 
 ### Características del Diseño
-- **Diseño responsivo** compatible con dispositivos móviles y desktop
-- **Animaciones fluidas** que mejoran la experiencia de usuario
+- **Diseño responsivo** en próxima versión
 - **Tema visual cohesivo** con paleta de colores pirata
 - **Accesibilidad** con contrastes apropiados y navegación por teclado
 - **Gamificación** mediante sistema de monedas y progreso visual
@@ -96,37 +92,6 @@ css/
 - **Práctica**: Ejecución de código en entorno Trinket
 - **Sumativa**: Desafíos integradores que combinan conceptos
 
-### Sistema de Retroalimentación
-- Feedback inmediato en respuestas de quiz
-- Validación automática de ejercicios
-- Mensajes contextualizados en la temática pirata
-- Progreso visual mediante el contador de monedas
-
-## Requisitos del Sistema
-
-### Para Estudiantes
-- Navegador web moderno (Chrome 80+, Firefox 75+, Safari 13+, Edge 80+)
-- Conexión a internet para cargar iframes de Trinket
-- JavaScript habilitado
-- Resolución mínima recomendada: 320px (móvil)
-
-### Para Instructores
-- Servidor web para alojar los archivos HTML/CSS/JS
-- Acceso a Trinket.io para modificar ejercicios (opcional)
-- Navegador para previsualizar contenido
-
-## Instalación y Uso
-
-### Instalación
-```bash
-# Clonar o descargar los archivos
-git clone [repository-url]
-cd aventuras-piratas
-
-# Servir archivos localmente (ejemplo con Python)
-python -m http.server 8000
-
-
 ### Estructura de Archivos
 ```
 aventuras-piratas/
@@ -139,8 +104,10 @@ aventuras-piratas/
 └── css/                   # Archivos de estilos
     ├── base.css
     ├── layout.css
-    ├── components.css
-    ├── responsive.css
+    └── components.css
+└── img/                   # Archivos de imágenes
+    ├── mapa.jpg
+    └── pirata1.png   
 ```
 
 ## Metodología Pedagógica
@@ -191,6 +158,6 @@ Este proyecto está licenciado bajo Creative Commons BY-SA 4.0
 Para reportar problemas, sugerir mejoras o contribuir al proyecto:
 - Revisar la documentación técnica en los comentarios del código
 - Testear en múltiples navegadores antes de reportar bugs
-- Proponer mejoras pedagógicas basadas en evidencia
+- Proponer mejoras pedagógicas, etc. pueden escribir a profe.eliza17@gmail.com o profesorlarroca@gmail.com
 
 ---

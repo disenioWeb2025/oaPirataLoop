@@ -1,4 +1,7 @@
-// ======= CONFIG =======
+// =======================
+//  CONFIGURACIÓN GENERAL
+// =======================
+
 const STORAGE_KEY = "progresoPirata_v1";
 
 const EJERCICIOS_REQUERIDOS = [
@@ -16,7 +19,10 @@ const EJERCICIOS_REQUERIDOS = [
 const TABS_REQUERIDOS = ["for-tab", "while-tab", "comparison-tab", "challenges-tab"];
 const MONEDAS_PARA_GANAR = 12;
 
-// ======= ESTADO =======
+// =======================
+//  ESTADO EN MEMORIA
+// =======================
+
 let monedasOro = 0;
 let ejerciciosCompletados = new Set();
 let tabsVisitados = new Set();
@@ -26,7 +32,10 @@ if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
-// ======= STORAGE =======
+// =======================
+//  PERSISTENCIA (Storage)
+// =======================
+
 function guardarProgreso() {
   const data = {
     monedas: monedasOro,
@@ -52,62 +61,78 @@ function cargarProgreso() {
       localStorage.removeItem(STORAGE_KEY);
     }
   }
-  // Sync UI inicial
+
+  // Sincronizar UI inicial
   const contador = document.getElementById("contador-monedas");
   if (contador) contador.textContent = monedasOro;
-  verificarVictoria(); // también construye el progreso en la UI
+
+  // Mostrar/ocultar el HUD de monedas según el valor actual
+  const contenedor = document.querySelector(".contador-monedas-container");
+  if (contenedor) contenedor.style.display = monedasOro > 0 ? "block" : "none";
+
+  verificarVictoria();
 }
 
-// ======= MONEDAS / UI =======
+// =======================
+//  UI: MONEDAS Y TOASTS
+// =======================
+
+/**
+ * Crea y muestra un toast con clases de estilo.
+ * @param {"success"|"error"} tipo
+ * @param {string} htmlContenido
+ */
+function crearToast(tipo, htmlContenido) {
+  const toast = document.createElement("div");
+  toast.className = `toast ${tipo === "success" ? "toast--success" : "toast--error"}`;
+  toast.innerHTML = htmlContenido;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 3000);
+}
+
 function actualizarMonedas() {
   const contador = document.getElementById("contador-monedas");
+  const contenedor = document.querySelector(".contador-monedas-container");
+
   if (contador) {
     contador.textContent = monedasOro;
-    contador.style.animation = "coinBounce 0.6s ease";
-    setTimeout(() => (contador.style.animation = ""), 600);
+    // Animación del contador (solo clase, sin inline)
+    contador.classList.add("coin-bounce");
+    setTimeout(() => contador.classList.remove("coin-bounce"), 600);
   }
+
+  // Mostrar solo si hay al menos 1 moneda
+  if (contenedor) {
+    contenedor.style.display = monedasOro > 0 ? "block" : "none";
+  }
+
   guardarProgreso();
   verificarVictoria();
 }
 
 function mostrarRecompensa(cantidad, esDesafio = false) {
-  const toast = document.createElement("div");
-  toast.style.cssText = `
-    position: fixed; top: 20%; right: 20px;
-    background: linear-gradient(45deg,#f1c40f,#f39c12);
-    color:#2c3e50; padding:20px 30px; border-radius:15px;
-    font-size:1.2rem; font-weight:700; text-align:center;
-    box-shadow:0 10px 30px rgba(241,196,15,.6);
-    z-index:2000; border:3px solid #e67e22; max-width:320px;
-    animation: rewardSlide 3s ease-in-out;
-  `;
   const tipo = esDesafio ? "¡Desafío completado!" : "¡Ejemplo/Quiz!";
-  toast.innerHTML = `
-    💰 +${cantidad} Moneda${cantidad > 1 ? "s" : ""} de Oro<br>
-    <span style="font-size:.95rem;color:#27ae60">✅ ¡Respuesta correcta!</span><br>
-    <span style="font-size:.85rem">🏴‍☠️ ${tipo}</span>
-  `;
-  document.body.appendChild(toast);
-  setTimeout(() => toast.remove(), 3000);
+  crearToast(
+    "success",
+    `
+      🪙 +${cantidad} Moneda${cantidad > 1 ? "s" : ""} de Oro<br>
+      <span class="toast__msg-ok">✅ ¡Respuesta correcta!</span><br>
+      <span class="toast__sub">🏴‍☠️ ${tipo}</span>
+    `
+  );
 }
 
 function mostrarErrorRespuesta() {
-  const toast = document.createElement("div");
-  toast.style.cssText = `
-    position: fixed; top: 20%; right: 20px;
-    background: linear-gradient(45deg,#e74c3c,#c0392b);
-    color:#fff; padding:20px 30px; border-radius:15px;
-    font-size:1.2rem; font-weight:700; text-align:center;
-    box-shadow:0 10px 30px rgba(192,57,43,.6);
-    z-index:2000; border:3px solid #e74c3c; max-width:320px;
-    animation: rewardSlide 3s ease-in-out;
-  `;
-  toast.innerHTML = `❌ Respuesta incorrecta<br><span style="font-size:.95rem">Intenta de nuevo</span>`;
-  document.body.appendChild(toast);
-  setTimeout(() => toast.remove(), 3000);
+  crearToast(
+    "error",
+    `❌ Respuesta incorrecta<br><span class="toast__sub">Intenta de nuevo</span>`
+  );
 }
 
-// ======= PROGRESO / VICTORIA =======
+// =======================
+//  PROGRESO Y VICTORIA
+// =======================
+
 function actualizarProgreso({ ejercicios, totalEjercicios, tabs, totalTabs, monedas, monedasRequeridas }) {
   const container = document.querySelector(".contador-monedas-container .monedas-info");
   if (!container) return;
@@ -116,9 +141,9 @@ function actualizarProgreso({ ejercicios, totalEjercicios, tabs, totalTabs, mone
   if (!progressDiv) {
     progressDiv = document.createElement("div");
     progressDiv.className = "progreso-container";
-    progressDiv.style.cssText = `margin-top:10px;font-size:.85rem;color:#87ceeb;line-height:1.3`;
     container.appendChild(progressDiv);
   }
+
   progressDiv.innerHTML = `
     📚 Ejercicios: ${ejercicios}/${totalEjercicios}<br>
     🗂️ Secciones: ${tabs}/${totalTabs}<br>
@@ -127,8 +152,8 @@ function actualizarProgreso({ ejercicios, totalEjercicios, tabs, totalTabs, mone
 }
 
 function verificarVictoria() {
-  const ejerciciosCompletos = EJERCICIOS_REQUERIDOS.filter(id => ejerciciosCompletados.has(id));
-  const tabsCompletos = TABS_REQUERIDOS.filter(id => tabsVisitados.has(id));
+  const ejerciciosCompletos = EJERCICIOS_REQUERIDOS.filter((id) => ejerciciosCompletados.has(id));
+  const tabsCompletos = TABS_REQUERIDOS.filter((id) => tabsVisitados.has(id));
 
   const progreso = {
     ejercicios: ejerciciosCompletos.length,
@@ -136,7 +161,7 @@ function verificarVictoria() {
     tabs: tabsCompletos.length,
     totalTabs: TABS_REQUERIDOS.length,
     monedas: monedasOro,
-    monedasRequeridas: MONEDAS_PARA_GANAR
+    monedasRequeridas: MONEDAS_PARA_GANAR,
   };
 
   actualizarProgreso(progreso);
@@ -155,41 +180,29 @@ function mostrarVictoria() {
 
   const overlay = document.createElement("div");
   overlay.id = "overlay-victoria";
-  overlay.style.cssText = `
-    position:fixed; inset:0; background:rgba(0,0,0,.9);
-    display:flex; justify-content:center; align-items:center; z-index:3000;
-  `;
+  overlay.className = "overlay";
 
   overlay.innerHTML = `
-    <div style="
-      background: linear-gradient(45deg,#f1c40f,#e67e22);
-      color:#2c3e50; padding:40px; border-radius:20px; text-align:center; max-width:640px;
-      box-shadow:0 20px 50px rgba(0,0,0,.8);
-    ">
-      <h2 style="font-size:2.2rem;margin:0 0 16px">🏆 ¡VICTORIA PIRATA! 🏆</h2>
-      <p style="font-size:1.15rem;margin:0 0 10px">
+    <div class="victory-card">
+      <h2 class="victory-card__title">🏆 ¡VICTORIA PIRATA! 🏆</h2>
+      <p class="victory-card__text">
         ¡Has ganado <b>${monedasOro}</b> monedas de oro y te has convertido en <b>Maestro de los Bucles</b>!
       </p>
-      <div style="font-size:1.4rem;margin:18px 0">${"💰".repeat(Math.min(monedasOro, 12))}</div>
-      <div style="display:flex;gap:12px;justify-content:center;margin-top:8px;flex-wrap:wrap">
-        <button onclick="cerrarVictoria()" style="
-          background:#2c3e50;color:#f1c40f;border:none;padding:12px 22px;border-radius:10px;
-          font-weight:700;cursor:pointer
-        ">¡Seguir Navegando!</button>
-        <button onclick="reiniciarProgreso()" style="
-          background:#e74c3c;color:#fff;border:none;padding:12px 22px;border-radius:10px;
-          font-weight:700;cursor:pointer
-        ">🔄 Reiniciar Aventura</button>
+      <div class="victory-card__coins">${"🪙".repeat(Math.min(monedasOro, 12))}</div>
+      <div class="victory-actions">
+        <button class="btn btn--primary" onclick="cerrarVictoria()">¡Seguir Navegando!</button>
+        <button class="btn btn--danger" onclick="reiniciarProgreso()">🔄 Reiniciar Aventura</button>
       </div>
     </div>
   `;
+
   document.body.appendChild(overlay);
 
   // Mensaje final oculto en index.html (si existe)
   const felicidades = document.getElementById("final-felicidades");
   if (felicidades) {
     felicidades.style.display = "block";
-    felicidades.style.animation = "fadeIn 1s ease";
+    felicidades.classList.add("fade-in");
   }
 }
 
@@ -204,16 +217,17 @@ function reiniciarProgreso() {
   tabsVisitados = new Set();
   localStorage.removeItem(STORAGE_KEY);
 
-  // Refrescar UI y volver arriba
   actualizarMonedas();
   cerrarVictoria();
   window.scrollTo(0, 0);
-
-  // Recargar para limpiar marcas visuales previas
-  location.reload();
+  location.reload(); // Limpia marcas visuales previas
+  window.location.href = "index.html";
 }
 
-// ======= EJERCICIOS / QUIZ =======
+// =======================
+//  EJERCICIOS / QUIZ
+// =======================
+
 function marcarEjercicioCompletado(ejercicioId) {
   const iframe = document.querySelector(`iframe[data-exercise="${ejercicioId}"]`);
   if (!iframe) return;
@@ -223,11 +237,7 @@ function marcarEjercicioCompletado(ejercicioId) {
   if (!container.querySelector(".ejercicio-completado")) {
     const marca = document.createElement("div");
     marca.className = "ejercicio-completado";
-    marca.textContent = "✅ ¡Completado! +💰";
-    marca.style.cssText = `
-      position:absolute; top:10px; right:10px; background:#2ecc71; color:#fff;
-      padding:6px 10px; border-radius:14px; font-size:.9rem; font-weight:700; z-index:10
-    `;
+    marca.textContent = "✅ ¡Completado! +🪙";
     container.style.position = "relative";
     container.appendChild(marca);
   }
@@ -257,7 +267,10 @@ function verificarRespuesta(ejercicioId, respuestaCorrecta) {
   }
 }
 
-// ======= SECCIONES =======
+// =======================
+//  SECCIONES VISITADAS
+// =======================
+
 function marcarTabVisitado(tabId) {
   if (!tabsVisitados.has(tabId)) {
     tabsVisitados.add(tabId);
@@ -266,7 +279,10 @@ function marcarTabVisitado(tabId) {
   }
 }
 
-// ======= INICIO =======
+// =======================
+//  INICIALIZACIÓN
+// =======================
+
 document.addEventListener("DOMContentLoaded", () => {
   // Siempre arrancar arriba
   window.scrollTo(0, 0);
@@ -291,13 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ejerciciosCompletados.forEach((id) => setTimeout(() => marcarEjercicioCompletado(id), 400));
 });
 
-// ======= LEGACY NO-OP =======
-function showTab() {
-  // Compatibilidad con versiones viejas (no hace nada en multipágina)
-  console.log("showTab: multipágina activa");
-}
-
-// ✅ Refuerzo: cuando toda la página terminó de cargarse
+// Refuerzo de scroll al terminar de cargar todo
 window.addEventListener("load", () => {
   window.scrollTo(0, 0);
 });

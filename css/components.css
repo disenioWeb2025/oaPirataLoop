@@ -21,6 +21,7 @@
 
 /* Coins Counter Components */
 .contador-monedas-container {
+  display: none; /* oculto al inicio */
   position: fixed;
   top: 20px;
   right: 20px;
@@ -369,4 +370,145 @@
     height: 4px;
     background: linear-gradient(90deg, #fbbf24, #f59e0b, #d97706, #fbbf24);
 }
-    
+
+/* HUD de monedas oculto por defecto */
+.contador-monedas-container {
+  display: none;
+}
+
+/* Toasts (éxito / error) */
+.toast {
+  position: fixed;
+  bottom: 24px; 
+  right: 24px;
+  padding: 20px 30px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  z-index: 2000;
+  max-width: 320px;
+  animation: rewardSlide 3s ease-in-out;
+  top: auto; 
+}
+
+.toast--success {
+  background: linear-gradient(45deg, #f1c40f, #f39c12);
+  color: #2c3e50;
+  border: 3px solid #e67e22;
+  box-shadow: 0 10px 30px rgba(241, 196, 15, 0.6);
+}
+
+.toast--error {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  color: #fff;
+  border: 3px solid #e74c3c;
+  box-shadow: 0 10px 30px rgba(192, 57, 43, 0.6);
+}
+
+.toast__msg-ok {
+  color: #15803d;           /* Tailwind: emerald-800 */
+  font-weight: 700;
+}
+
+.toast__sub {
+  font-size: 0.85rem;
+  opacity: 0.95;
+}
+
+/* Overlay y tarjeta de victoria */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.victory-card {
+  background: linear-gradient(45deg, #f1c40f, #e67e22);
+  color: #2c3e50;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 640px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.8);
+}
+
+.victory-card__title {
+  font-size: 2.2rem;
+  margin: 0 0 16px;
+}
+
+.victory-card__text {
+  font-size: 1.15rem;
+  margin: 0 0 10px;
+}
+
+.victory-card__coins {
+  font-size: 1.4rem;
+  margin: 18px 0;
+}
+
+.victory-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* Botones genéricos */
+.btn {
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background: #2c3e50;
+  color: #f1c40f;
+}
+
+.btn--danger {
+  background: #e74c3c;
+  color: #fff;
+}
+
+/* Badge de ejercicio completado */
+.ejercicio-completado {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #2ecc71;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  z-index: 10;
+}
+
+/* Contenedor del progreso (ya tienes una clase; dejo aquí por si falta) */
+.progreso-container {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  margin-top: 15px;
+}
+
+/* Rebote del contador de monedas */
+.coin-bounce {
+  animation: coinBounce 0.6s ease;
+}
+
+/* Aparición suave de mensajes finales */
+.fade-in {
+  animation: fadeIn 1s ease;
+}
+

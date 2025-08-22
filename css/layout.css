@@ -124,10 +124,36 @@
     background: linear-gradient(135deg, #7c2d12 0%, #9a3412 100%);
     border: 2px solid #fb923c;
     border-radius: 15px;
-    padding: 25px;
+    padding: 15px;
     margin-bottom: 25px;
+     display: flex;           /* activa el modo flex */
+    align-items: center;     /* centra verticalmente la imagen con el texto */
+    gap: 20px;               /* espacio entre la imagen y el texto */
+    overflow: visible; 
+
 }
 
+.pirata-img {
+  width: 200px;      /*       ajustá el tamaño del pirata */
+  display: block;      /* evita espacios fantasmas de inline-block */
+  margin-bottom: -70px; 
+}
+
+.mapa-img {
+  width: 400px;      /*       ajustá el tamaño del pirata */
+  display: block;      /* evita espacios fantasmas de inline-block */
+  margin-bottom: 0px; 
+}
+
+.intro-text {
+  flex: 1;                 /* el texto ocupa el resto del espacio */
+  
+}
+
+.intro-text h3 {
+  margin-top: 0;
+  margin-bottom: 15px;    /* separación con el párrafo */
+}
 .welcome-story {
     margin-bottom: 30px;
 }
