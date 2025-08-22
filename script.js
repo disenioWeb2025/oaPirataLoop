@@ -69,7 +69,7 @@ function cargarProgreso() {
   // Mostrar/ocultar el HUD de monedas según el valor actual
   const contenedor = document.querySelector(".contador-monedas-container");
   if (contenedor) contenedor.style.display = monedasOro > 0 ? "block" : "none";
-
+  ensureReiniciarLink();
   verificarVictoria();
 }
 
@@ -105,7 +105,7 @@ function actualizarMonedas() {
   if (contenedor) {
     contenedor.style.display = monedasOro > 0 ? "block" : "none";
   }
-
+  ensureReiniciarLink();
   guardarProgreso();
   verificarVictoria();
 }
@@ -282,12 +282,32 @@ function marcarTabVisitado(tabId) {
 // =======================
 //  INICIALIZACIÓN
 // =======================
+// Crea el link "Reiniciar" dentro del HUD de monedas si no existe
+function ensureReiniciarLink() {
+  const container = document.querySelector(".contador-monedas-container .monedas-info");
+  if (!container) return; // esta página no tiene HUD
+
+  // si ya existe, no hacemos nada
+  if (container.querySelector(".reiniciar-link")) return;
+
+  const link = document.createElement("a");
+  link.className = "reiniciar-link";
+  link.href = "#";
+  link.textContent = "🔄 Reiniciar";
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    reiniciarProgreso();
+  });
+
+  container.appendChild(link);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   // Siempre arrancar arriba
   window.scrollTo(0, 0);
 
   cargarProgreso();
+  ensureReiniciarLink();
 
   // Detectar página actual y marcar sección
   const currentPage = window.location.pathname.split("/").pop() || "index.html";

@@ -1,6 +1,8 @@
-/* ===== LAYOUT STYLES ===== */
+/* ===== ESTILOS DE DISEÑO Y LAYOUT ===== */
 
-/* Container and Grid Systems */
+/* ===== SISTEMA DE CONTENEDORES Y GRIDS ===== */
+
+/* Contenedor principal con ancho máximo y centrado */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -9,7 +11,9 @@
     z-index: 1;
 }
 
-/* Header Layout */
+/* ===== LAYOUT DEL HEADER ===== */
+
+/* Header principal con gradiente y efectos */
 .header {
     background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
     border: 3px solid #fbbf24;
@@ -22,7 +26,9 @@
     overflow: hidden;
 }
 
-/* Navigation Layout */
+/* ===== LAYOUT DE NAVEGACIÓN ===== */
+
+/* Contenedor de pestañas de navegación */
 .navigation-tabs {
     display: flex;
     gap: 10px;
@@ -35,6 +41,7 @@
     flex-wrap: wrap;
 }
 
+/* Pestaña individual de navegación */
 .nav-tab {
     flex: 1;
     min-width: 120px;
@@ -51,7 +58,9 @@
     overflow: hidden;
 }
 
-/* Content Sections Layout */
+/* ===== LAYOUT DE SECCIONES DE CONTENIDO ===== */
+
+/* Sección de lección principal */
 .lesson-section {
     background: rgba(31, 41, 55, 0.9);
     border-radius: 20px;
@@ -62,7 +71,9 @@
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
-/* Interactive Sections Layout */
+/* ===== LAYOUT DE SECCIONES INTERACTIVAS ===== */
+
+/* Sección interactiva con fondo semitransparente */
 .interactive-section {
     margin-bottom: 40px;
     padding: 25px;
@@ -71,7 +82,9 @@
     border: 2px solid rgba(251, 191, 36, 0.2);
 }
 
-/* Code Container Layout */
+/* ===== LAYOUT DE CONTENEDORES DE CÓDIGO ===== */
+
+/* Contenedor principal para código */
 .code-container {
     background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
     border-radius: 15px;
@@ -82,7 +95,9 @@
     position: relative;
 }
 
-/* Grid Layouts */
+/* ===== LAYOUTS DE GRID ===== */
+
+/* Contenedor de ejemplos con grid de 2 columnas */
 .example-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -90,11 +105,14 @@
     margin-top: 20px;
 }
 
+/* Sección de reglas */
 .rule-section {
     margin-bottom: 20px;
 }
 
-/* Flexbox Layouts */
+/* ===== LAYOUTS FLEXBOX ===== */
+
+/* Información de monedas con flexbox */
 .monedas-info {
     display: flex;
     flex-direction: column;
@@ -102,6 +120,7 @@
     gap: 10px;
 }
 
+/* Contenedor de progreso */
 .progreso-container {
     background: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
@@ -110,8 +129,10 @@
     margin-top: 15px;
 }
 
-/* Specific Content Layouts */
-.objectives-section, 
+/* ===== LAYOUTS DE CONTENIDO ESPECÍFICO ===== */
+
+/* Secciones de objetivos y reglas del juego */
+.objectives-section,
 .game-rules {
     background: rgba(75, 85, 99, 0.6);
     border-radius: 15px;
@@ -120,44 +141,49 @@
     border: 2px solid rgba(251, 191, 36, 0.3);
 }
 
+/* Introducción del capitán con layout flex */
 .captain-intro {
     background: linear-gradient(135deg, #7c2d12 0%, #9a3412 100%);
     border: 2px solid #fb923c;
     border-radius: 15px;
     padding: 15px;
     margin-bottom: 25px;
-     display: flex;           /* activa el modo flex */
-    align-items: center;     /* centra verticalmente la imagen con el texto */
-    gap: 20px;               /* espacio entre la imagen y el texto */
-    overflow: visible; 
-
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow: visible;
 }
 
+/* Imagen del pirata */
 .pirata-img {
-  width: 200px;      /*       ajustá el tamaño del pirata */
-  display: block;      /* evita espacios fantasmas de inline-block */
-  margin-bottom: -70px; 
+    width: 200px;
+    display: block;
+    margin-bottom: -70px;
 }
 
+/* Imagen del mapa */
 .mapa-img {
-  width: 400px;      /*       ajustá el tamaño del pirata */
-  display: block;      /* evita espacios fantasmas de inline-block */
-  margin-bottom: 0px; 
+    width: 400px;
+    display: block;
+    margin-bottom: 0px;
 }
 
+/* Texto de introducción */
 .intro-text {
-  flex: 1;                 /* el texto ocupa el resto del espacio */
-  
+    flex: 1;
 }
 
 .intro-text h3 {
-  margin-top: 0;
-  margin-bottom: 15px;    /* separación con el párrafo */
+    margin-top: 0;
+    margin-bottom: 15px;
 }
+
+/* Historia de bienvenida */
 .welcome-story {
     margin-bottom: 30px;
 }
 
+/* Inicio de aventura */
 .start-adventure {
     background: rgba(75, 85, 99, 0.6);
     border-radius: 15px;
@@ -166,7 +192,9 @@
     border: 2px solid rgba(251, 191, 36, 0.3);
 }
 
-/* Challenge Layouts */
+/* ===== LAYOUTS DE DESAFÍO ===== */
+
+/* Caja principal de desafío */
 .challenge-box {
     background: linear-gradient(135deg, #7c2d12 0%, #9a3412 100%);
     border: 3px solid #fb923c;
@@ -176,6 +204,7 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
+/* Descripción del desafío */
 .challenge-description {
     background: rgba(0, 0, 0, 0.3);
     padding: 20px;
@@ -183,11 +212,14 @@
     margin-bottom: 20px;
 }
 
-/* Comparison Layout */
+/* ===== LAYOUT DE COMPARACIÓN ===== */
+
+/* Sección de comparación */
 .comparison-section {
     margin-bottom: 30px;
 }
 
+/* Tabla de comparación */
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
@@ -198,10 +230,12 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* Casos especiales */
 .special-cases {
     margin-top: 30px;
 }
 
+/* Caja de caso específico */
 .case-box {
     background: rgba(75, 85, 99, 0.6);
     border-radius: 15px;
@@ -210,6 +244,7 @@
     border-left: 4px solid #fbbf24;
 }
 
+/* Grid de código de comparación */
 .comparison-code {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -217,6 +252,7 @@
     margin-top: 15px;
 }
 
+/* Lado del código */
 .code-side {
     background: #1f2937;
     padding: 15px;
@@ -224,6 +260,7 @@
     border: 1px solid #4b5563;
 }
 
+/* Flujo de decisión */
 .decision-flow {
     background: rgba(0, 0, 0, 0.3);
     padding: 20px;
@@ -231,6 +268,7 @@
     margin: 15px 0;
 }
 
+/* Rastreador de finalización */
 .completion-tracker {
     margin-top: 20px;
     padding: 15px;
@@ -239,6 +277,7 @@
     border-left: 4px solid #34d399;
 }
 
+/* Mensaje de desafío final */
 .final-challenge-message {
     background: rgba(251, 191, 36, 0.1);
     border: 2px solid #fbbf24;
@@ -246,4 +285,100 @@
     padding: 25px;
     text-align: center;
     margin-top: 30px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .navigation-tabs {
+        flex-direction: column;
+    }
+    
+    .nav-tab {
+        min-width: auto;
+    }
+    
+    .example-container,
+    .comparison-code {
+        grid-template-columns: 1fr;
+    }
+    
+    .captain-intro {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .pirata-img,
+    .mapa-img {
+        margin-bottom: 10px;
+    }
+    
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .lesson-title {
+        font-size: 2rem;
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header {
+        padding: 20px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .lesson-title {
+        font-size: 1.8rem;
+    }
+    
+    .contador-monedas-container {
+        top: 10px;
+        right: 10px;
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+    
+    .monedas-count {
+        font-size: 2rem;
+        padding: 8px 15px;
+    }
+    
+    .victory-card {
+        margin: 20px;
+        padding: 30px 20px;
+    }
+    
+    .victory-card__title {
+        font-size: 1.8rem;
+    }
+    
+    .toast {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        max-width: none;
+    }
+    
+    .pirata-img {
+        width: 150px;
+    }
+    
+    .mapa-img {
+        width: 100%;
+        max-width: 300px;
+    }
 }

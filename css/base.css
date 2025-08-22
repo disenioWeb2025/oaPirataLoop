@@ -1,20 +1,28 @@
-/* ===== BASE STYLES ===== */
+/* ===== ESTILOS BASE - RESET Y CONFIGURACIÓN UNIVERSAL ===== */
 
-/* Reset and Universal Styles */
+/* Reset universal para eliminar márgenes y paddings por defecto */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Typography */
+/* ===== TIPOGRAFÍA BASE ===== */
+
+/* Configuración principal del body */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #f8fafc;
     line-height: 1.6;
     font-size: 16px;
+    /* Fondo con gradiente azul */
+    background: linear-gradient(135deg, #0c4a6e 0%, #1e3a8a 50%, #312e81 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
 }
 
+/* Estilos para encabezados */
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     margin-bottom: 1rem;
@@ -35,12 +43,15 @@ h3 {
     line-height: 1.4;
 }
 
+/* Párrafos con espaciado consistente */
 p {
     margin-bottom: 1rem;
     font-size: 1.1rem;
 }
 
-/* Links */
+/* ===== ENLACES Y ELEMENTOS INTERACTIVOS ===== */
+
+/* Enlaces con color dorado y efectos hover */
 a {
     color: #fbbf24;
     text-decoration: none;
@@ -52,7 +63,8 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Lists */
+/* ===== LISTAS ===== */
+
 ul, ol {
     margin-bottom: 1rem;
 }
@@ -61,7 +73,9 @@ li {
     margin-bottom: 0.5rem;
 }
 
-/* Code Elements */
+/* ===== ELEMENTOS DE CÓDIGO ===== */
+
+/* Código inline */
 code {
     background: #1f2937;
     color: #fde047;
@@ -71,6 +85,7 @@ code {
     font-size: 0.9em;
 }
 
+/* Bloques de código */
 pre {
     background: #2c3e50;
     color: #ecf0f1;
@@ -82,12 +97,15 @@ pre {
     line-height: 1.4;
 }
 
-/* Form Elements */
+/* ===== ELEMENTOS DE FORMULARIO ===== */
+
+/* Herencia de fuente para elementos de formulario */
 input, button, select, textarea {
     font-family: inherit;
     font-size: inherit;
 }
 
+/* Botones con estilo base */
 button {
     cursor: pointer;
     border: none;
@@ -100,26 +118,23 @@ button:hover {
     transform: translateY(-2px);
 }
 
-/* Strong and Emphasis */
+/* ===== ÉNFASIS Y TEXTO DESTACADO ===== */
+
+/* Texto en negrita con color destacado */
 strong {
     color: #fde047;
     font-weight: bold;
 }
 
+/* Texto en cursiva */
 em {
     font-style: italic;
     color: #e5e7eb;
 }
 
-/* Background */
-body {
-    background: linear-gradient(135deg, #0c4a6e 0%, #1e3a8a 50%, #312e81 100%);
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
-}
+/* ===== SELECCIÓN DE TEXTO ===== */
 
-/* Selection */
+/* Personalización de la selección de texto */
 ::selection {
     background: #fbbf24;
     color: #1f2937;
@@ -130,30 +145,36 @@ body {
     color: #1f2937;
 }
 
+/* ===== BOTÓN DE NAVEGACIÓN ESPECIAL ===== */
+
+/* Contenedor del botón alineado a la derecha */
 .boton-container {
-  text-align: right; /* alinea el contenido a la derecha */
-  margin-top: 15px;  /* espacio arriba del botón */
-  margin-right: 20px;
+    text-align: right;
+    margin-top: 15px;
+    margin-right: 20px;
 }
 
+/* Botón con gradiente dorado y efectos */
 .boton-ir {
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
-  color: #1f2937;
-  font-weight: bold;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #1f2937;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .boton-ir:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(251,191,36,0.8);
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(251, 191, 36, 0.8);
 }
-/* ===== FOOTER STYLES ===== */
 
+/* ===== FOOTER ===== */
+
+/* Footer con gradiente oscuro y efectos */
 footer {
     background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
     color: #9ca3af;
@@ -166,6 +187,7 @@ footer {
     overflow: hidden;
 }
 
+/* Línea decorativa superior del footer */
 footer::before {
     content: '';
     position: absolute;
@@ -177,12 +199,14 @@ footer::before {
     opacity: 0.6;
 }
 
+/* Párrafos dentro del footer */
 footer p {
     margin: 0;
     font-size: 1rem;
     line-height: 1.5;
 }
 
+/* Enlaces dentro del footer con efectos especiales */
 footer a {
     color: #fbbf24;
     text-decoration: none;
@@ -197,6 +221,7 @@ footer a:hover {
     text-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
 }
 
+/* Línea animada bajo los enlaces del footer */
 footer a::after {
     content: '';
     position: absolute;
@@ -210,27 +235,4 @@ footer a::after {
 
 footer a:hover::after {
     width: 100%;
-}
-
-/* Responsive footer */
-@media (max-width: 767.98px) {
-    footer {
-        padding: 20px 15px;
-        margin-top: 30px;
-    }
-    
-    footer p {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 575.98px) {
-    footer {
-        padding: 15px 10px;
-    }
-    
-    footer p {
-        font-size: 0.85rem;
-        line-height: 1.6;
-    }
 }

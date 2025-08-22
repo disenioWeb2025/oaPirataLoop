@@ -1,6 +1,8 @@
-/* ===== COMPONENTS STYLES ===== */
+/* ===== ESTILOS DE COMPONENTES ===== */
 
-/* Header Components */
+/* ===== COMPONENTES DE ENCABEZADO ===== */
+
+/* Título principal del header */
 .header h1 {
     font-size: 3rem;
     color: #fbbf24;
@@ -8,41 +10,65 @@
     margin-bottom: 10px;
 }
 
+/* Párrafos del header */
 .header p {
     font-size: 1.3rem;
     color: #e5e7eb;
     margin-bottom: 20px;
 }
 
+/* Emoji pirata decorativo */
 .pirate-emoji {
     font-size: 2.5rem;
     margin: 15px 0;
 }
 
-/* Coins Counter Components */
-.contador-monedas-container {
-  display: none; /* oculto al inicio */
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: rgba(0, 0, 0, 0.7);
-  color: #f1c40f;
-  padding: 15px 20px;
-  border-radius: 15px;
-  z-index: 999;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
-  backdrop-filter: blur(6px);
+/* Efecto decorativo para el header */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b, #d97706, #fbbf24);
 }
 
+/* ===== CONTADOR DE MONEDAS (HUD) ===== */
 
+/* Contenedor principal del contador (oculto por defecto) */
+.contador-monedas-container {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #f1c40f;
+    padding: 15px 20px;
+    border-radius: 15px;
+    z-index: 999;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(6px);
+}
+
+/* Información de monedas centrada */
+.monedas-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Etiqueta de monedas */
 .monedas-label {
     font-size: 1.2rem;
     font-weight: bold;
     color: #fbbf24;
 }
 
+/* Contador numérico de monedas */
 .monedas-count {
     font-size: 2.5rem;
     font-weight: bold;
@@ -56,6 +82,7 @@
     text-align: center;
 }
 
+/* Objetivo de monedas */
 .monedas-objetivo {
     font-size: 0.9rem;
     color: #fde047;
@@ -63,13 +90,21 @@
     font-style: italic;
 }
 
-/* Navigation Components */
+/* Animación de rebote para monedas */
+.coin-bounce {
+    animation: coinBounce 0.6s ease;
+}
+
+/* ===== COMPONENTES DE NAVEGACIÓN ===== */
+
+/* Efectos hover para pestañas de navegación */
 .nav-tab:hover {
     transform: translateY(-3px);
     border-color: #fbbf24;
     box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3);
 }
 
+/* Pestaña activa */
 .nav-tab.active {
     background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
     color: #1f2937;
@@ -77,6 +112,7 @@
     box-shadow: 0 8px 16px rgba(251, 191, 36, 0.4);
 }
 
+/* Efecto de brillo deslizante */
 .nav-tab::before {
     content: '';
     position: absolute;
@@ -92,7 +128,9 @@
     left: 100%;
 }
 
-/* Content Titles */
+/* ===== TÍTULOS DE CONTENIDO ===== */
+
+/* Título de lección con línea decorativa */
 .lesson-title {
     font-size: 2.5rem;
     color: #fbbf24;
@@ -112,8 +150,12 @@
     border-radius: 2px;
 }
 
-/* Story and Content Boxes */
-.story-box, .treasure-box, .welcome-story {
+/* ===== CAJAS DE HISTORIA Y CONTENIDO ===== */
+
+/* Cajas principales de contenido */
+.story-box,
+.treasure-box,
+.welcome-story {
     background: linear-gradient(135deg, #065f46 0%, #047857 100%);
     border: 2px solid #34d399;
     border-radius: 15px;
@@ -124,8 +166,9 @@
     overflow: hidden;
 }
 
-.story-box::before, .treasure-box::before {
-    content: '🗡️';
+/* Iconos decorativos para las cajas */
+.story-box::before,
+.treasure-box::before {
     position: absolute;
     top: 15px;
     right: 20px;
@@ -133,21 +176,31 @@
     opacity: 0.3;
 }
 
+.story-box::before {
+    content: '🗡️';
+}
+
 .treasure-box::before {
     content: '🪙';
 }
 
-.story-box p, .treasure-box p {
+/* Párrafos dentro de las cajas */
+.story-box p,
+.treasure-box p {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 15px;
 }
 
-.story-box strong, .treasure-box strong {
+/* Texto destacado en las cajas */
+.story-box strong,
+.treasure-box strong {
     color: #fde047;
 }
 
-/* Interactive Section Components */
+/* ===== SECCIONES INTERACTIVAS ===== */
+
+/* Títulos de secciones interactivas */
 .interactive-section h3 {
     color: #fbbf24;
     font-size: 1.8rem;
@@ -155,6 +208,7 @@
     text-align: center;
 }
 
+/* Título de código destacado */
 .code-title {
     background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
     color: #1f2937;
@@ -166,13 +220,16 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* iframes dentro de contenedores de código */
 .code-container iframe {
     border-radius: 10px;
     border: 2px solid #4b5563;
     box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Quiz Components */
+/* ===== COMPONENTES DE QUIZ ===== */
+
+/* Contenedor principal del quiz */
 .quiz {
     margin-top: 20px;
     padding: 20px;
@@ -181,6 +238,7 @@
     border-left: 4px solid #fbbf24;
 }
 
+/* Pregunta del quiz */
 .quiz p {
     font-size: 1.1rem;
     margin-bottom: 15px;
@@ -188,6 +246,7 @@
     font-weight: bold;
 }
 
+/* Etiquetas de opciones del quiz */
 .quiz label {
     display: block;
     margin: 10px 0;
@@ -205,11 +264,13 @@
     transform: translateX(5px);
 }
 
+/* Radio buttons del quiz */
 .quiz input[type="radio"] {
     margin-right: 10px;
     accent-color: #fbbf24;
 }
 
+/* Botón del quiz */
 .quiz button {
     background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
     color: white;
@@ -229,13 +290,20 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* List Components */
-.objectives-list, .rules-list, .adventure-path {
+/* ===== COMPONENTES DE LISTAS ===== */
+
+/* Listas sin viñetas predeterminadas */
+.objectives-list,
+.rules-list,
+.adventure-path {
     list-style: none;
     padding-left: 0;
 }
 
-.objectives-list li, .rules-list li, .adventure-path li {
+/* Elementos de lista con efectos */
+.objectives-list li,
+.rules-list li,
+.adventure-path li {
     background: rgba(31, 41, 55, 0.8);
     margin: 10px 0;
     padding: 15px;
@@ -244,11 +312,14 @@
     transition: all 0.3s ease;
 }
 
-.objectives-list li:hover, .rules-list li:hover, .adventure-path li:hover {
+.objectives-list li:hover,
+.rules-list li:hover,
+.adventure-path li:hover {
     transform: translateX(10px);
     background: rgba(55, 65, 81, 0.8);
 }
 
+/* Iconos específicos para cada tipo de lista */
 .objectives-list li::before {
     content: '📌';
     margin-right: 10px;
@@ -264,11 +335,14 @@
     margin-right: 10px;
 }
 
+/* Texto destacado en rutas de aventura */
 .adventure-path li strong {
     color: #fbbf24;
 }
 
-/* Comparison Table Components */
+/* ===== COMPONENTES DE TABLA DE COMPARACIÓN ===== */
+
+/* Encabezados de tabla */
 .comparison-table th {
     background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
     color: #1f2937;
@@ -277,16 +351,19 @@
     text-align: center;
 }
 
+/* Celdas de tabla */
 .comparison-table td {
     padding: 15px;
     border-bottom: 1px solid #4b5563;
     vertical-align: top;
 }
 
+/* Efecto hover en filas */
 .comparison-table tr:hover {
     background: rgba(75, 85, 99, 0.5);
 }
 
+/* Código dentro de tablas */
 .comparison-table code {
     background: #1f2937;
     color: #fde047;
@@ -295,28 +372,34 @@
     font-family: 'Courier New', monospace;
 }
 
-/* Example Components */
+/* ===== COMPONENTES DE EJEMPLOS ===== */
+
+/* Caja base para ejemplos */
 .example-box {
     padding: 20px;
     border-radius: 15px;
     border: 2px solid;
 }
 
+/* Ejemplo de bucle FOR */
 .for-example {
     background: linear-gradient(135deg, #065f46 0%, #047857 100%);
     border-color: #34d399;
 }
 
+/* Ejemplo de bucle WHILE */
 .while-example {
     background: linear-gradient(135deg, #7c2d12 0%, #9a3412 100%);
     border-color: #fb923c;
 }
 
+/* Títulos de ejemplos */
 .example-box h4 {
     color: #fde047;
     margin-bottom: 15px;
 }
 
+/* Contenedor de código de ejemplo */
 .code-example {
     background: #1f2937;
     padding: 15px;
@@ -325,12 +408,14 @@
     border-left: 4px solid #fbbf24;
 }
 
+/* Título del ejemplo de código */
 .code-example strong {
     color: #fbbf24;
     display: block;
     margin-bottom: 10px;
 }
 
+/* Código pre-formateado en ejemplos */
 .code-example pre {
     color: #e5e7eb;
     font-family: 'Courier New', monospace;
@@ -338,7 +423,9 @@
     white-space: pre-wrap;
 }
 
-/* Challenge Components */
+/* ===== COMPONENTES DE DESAFÍO ===== */
+
+/* Título de caja de desafío */
 .challenge-box h3 {
     color: #fde047;
     font-size: 2rem;
@@ -346,169 +433,172 @@
     text-align: center;
 }
 
-/* Exercise Completion Marker */
+/* ===== MARCADOR DE EJERCICIO COMPLETADO ===== */
+
+/* Badge de ejercicio completado */
 .ejercicio-completado {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: #0c391e;
+    background: #2ecc71;
     color: white;
-    padding: 5px 10px;
-    border-radius: 15px;
+    padding: 6px 10px;
+    border-radius: 14px;
     font-size: 0.9rem;
     font-weight: bold;
     z-index: 10;
 }
 
-/* Header Effects */
-.header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #fbbf24, #f59e0b, #d97706, #fbbf24);
-}
+/* ===== SISTEMA DE NOTIFICACIONES (TOASTS) ===== */
 
-/* HUD de monedas oculto por defecto */
-.contador-monedas-container {
-  display: none;
-}
-
-/* Toasts (éxito / error) */
+/* Toast base */
 .toast {
-  position: fixed;
-  bottom: 24px; 
-  right: 24px;
-  padding: 20px 30px;
-  border-radius: 15px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-align: center;
-  z-index: 2000;
-  max-width: 320px;
-  animation: rewardSlide 3s ease-in-out;
-  top: auto; 
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    padding: 20px 30px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    z-index: 2000;
+    max-width: 320px;
+    animation: rewardSlide 3s ease-in-out;
+    top: auto;
 }
 
+/* Toast de éxito */
 .toast--success {
-  background: linear-gradient(45deg, #f1c40f, #f39c12);
-  color: #2c3e50;
-  border: 3px solid #e67e22;
-  box-shadow: 0 10px 30px rgba(241, 196, 15, 0.6);
+    background: linear-gradient(45deg, #f1c40f, #f39c12);
+    color: #2c3e50;
+    border: 3px solid #e67e22;
+    box-shadow: 0 10px 30px rgba(241, 196, 15, 0.6);
 }
 
+/* Toast de error */
 .toast--error {
-  background: linear-gradient(45deg, #e74c3c, #c0392b);
-  color: #fff;
-  border: 3px solid #e74c3c;
-  box-shadow: 0 10px 30px rgba(192, 57, 43, 0.6);
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: #fff;
+    border: 3px solid #e74c3c;
+    box-shadow: 0 10px 30px rgba(192, 57, 43, 0.6);
 }
 
+/* Mensaje de éxito */
 .toast__msg-ok {
-  color: #15803d;           /* Tailwind: emerald-800 */
-  font-weight: 700;
+    color: #15803d;
+    font-weight: 700;
 }
 
+/* Subtítulo del toast */
 .toast__sub {
-  font-size: 0.85rem;
-  opacity: 0.95;
+    font-size: 0.85rem;
+    opacity: 0.95;
 }
 
-/* Overlay y tarjeta de victoria */
+/* ===== OVERLAY Y TARJETA DE VICTORIA ===== */
+
+/* Overlay de pantalla completa */
 .overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 3000;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
 }
 
+/* Tarjeta de victoria */
 .victory-card {
-  background: linear-gradient(45deg, #f1c40f, #e67e22);
-  color: #2c3e50;
-  padding: 40px;
-  border-radius: 20px;
-  text-align: center;
-  max-width: 640px;
-  box-shadow: 0 20px 50px rgba(0,0,0,.8);
+    background: linear-gradient(45deg, #f1c40f, #e67e22);
+    color: #2c3e50;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 640px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
 }
 
+/* Título de la tarjeta de victoria */
 .victory-card__title {
-  font-size: 2.2rem;
-  margin: 0 0 16px;
+    font-size: 2.2rem;
+    margin: 0 0 16px;
 }
 
+/* Texto de la tarjeta de victoria */
 .victory-card__text {
-  font-size: 1.15rem;
-  margin: 0 0 10px;
+    font-size: 1.15rem;
+    margin: 0 0 10px;
 }
 
+/* Monedas en tarjeta de victoria */
 .victory-card__coins {
-  font-size: 1.4rem;
-  margin: 18px 0;
+    font-size: 1.4rem;
+    margin: 18px 0;
 }
 
+/* Acciones de victoria */
 .victory-actions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  margin-top: 8px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 8px;
+    flex-wrap: wrap;
 }
 
-/* Botones genéricos */
+/* ===== BOTONES GENÉRICOS ===== */
+
+/* Botón base */
 .btn {
-  border: none;
-  padding: 12px 22px;
-  border-radius: 10px;
-  font-weight: 700;
-  cursor: pointer;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
 }
 
+/* Botón primario */
 .btn--primary {
-  background: #2c3e50;
-  color: #f1c40f;
+    background: #2c3e50;
+    color: #f1c40f;
 }
 
+/* Botón de peligro */
 .btn--danger {
-  background: #e74c3c;
-  color: #fff;
+    background: #e74c3c;
+    color: #fff;
 }
 
-/* Badge de ejercicio completado */
-.ejercicio-completado {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #2ecc71;
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 14px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  z-index: 10;
-}
+/* ===== CONTENEDOR DE PROGRESO ===== */
 
-/* Contenedor del progreso (ya tienes una clase; dejo aquí por si falta) */
 .progreso-container {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  padding: 10px;
-  border: 1px solid rgba(251, 191, 36, 0.3);
-  margin-top: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    margin-top: 15px;
 }
 
-/* Rebote del contador de monedas */
-.coin-bounce {
-  animation: coinBounce 0.6s ease;
-}
+/* ===== ANIMACIONES ===== */
 
-/* Aparición suave de mensajes finales */
+/* Aparición suave */
 .fade-in {
-  animation: fadeIn 1s ease;
+    animation: fadeIn 1s ease;
 }
 
+/* Definición de keyframes para animaciones */
+@keyframes coinBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes rewardSlide {
+    0% { transform: translateX(100%); opacity: 0; }
+    10%, 90% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
