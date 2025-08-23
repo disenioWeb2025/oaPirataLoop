@@ -142,15 +142,8 @@ aventuras-piratas/
 
 ## Licencia
 
-Este proyecto está licenciado bajo Creative Commons BY-SA 4.0
-- **Atribución**: Debe citarse a los autores originales
-- **ShareAlike**: Las obras derivadas deben usar la misma licencia
-- **Uso comercial**: Permitido con atribución apropiada
-
-## Créditos
-
-**Creado por**: Elizabeth Izquierdo - Néstor Larroca  
-**Licencia**: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)  
+**Creado por**: Profesores: Elizabeth Izquierdo - Néstor Larroca  
+**Licencia**: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)  
 **Año**: 2025
 
 ## Soporte y Contribuciones
