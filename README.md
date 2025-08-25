@@ -67,7 +67,6 @@ css/
 ```
 
 ### Características del Diseño
-- **Diseño responsivo** en próxima versión
 - **Tema visual cohesivo** con paleta de colores pirata
 - **Accesibilidad** con contrastes apropiados y navegación por teclado
 - **Gamificación** mediante sistema de monedas y progreso visual
@@ -115,7 +114,7 @@ aventuras-piratas/
 ### Enfoque Constructivista
 - Aprendizaje mediante experiencias prácticas
 - Construcción gradual del conocimiento
-- Conexión con conocimientos previos
+- Conexión con conocimientos previos de variables, listas, condicionales
 
 ### Aprendizaje Basado en Narrativa
 - Contexto temático motivador y coherente
@@ -127,23 +126,18 @@ aventuras-piratas/
 - Ejercicios progresivos en complejidad
 - Evaluación frecuente y retroalimentación inmediata
 
-## Adaptaciones y Personalización
 
-### Para Diferentes Niveles
-- **Principiantes**: Enfocarse en sintaxis básica y ejercicios guiados
-- **Intermedios**: Énfasis en comparación y toma de decisiones
-- **Avanzados**: Desafíos adicionales y optimización de código
-
-### Modificaciones Posibles
+## Modificaciones Posibles
 - Cambiar temática manteniendo estructura pedagógica
 - Ajustar dificultad de desafíos según grupo objetivo
 - Integrar con sistemas LMS existentes
 - Añadir más ejercicios prácticos
+- Cambiar el uso de Trinket por otra plataforma o forma de ejecutar python embebido, que permita chequear  de forma automática la ejecución y corrección del código
 
 ## Licencia
 
 **Creado por**: Profesores: Elizabeth Izquierdo - Néstor Larroca  
-**Licencia**: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)  
+**Licencia**: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 **Año**: 2025
 
 ## Soporte y Contribuciones

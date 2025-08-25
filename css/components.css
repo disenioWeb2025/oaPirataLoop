@@ -579,6 +579,15 @@
     margin-top: 15px;
 }
 
+/* Imagen del cofre en el mensaje de victoria */
+.victory-chest {
+  display: block;
+  max-width: 400px;
+  margin: 20px auto 10px;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+}
+
+
 /* ===== ANIMACIONES ===== */
 
 /* Aparición suave */
